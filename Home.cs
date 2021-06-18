@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace PhoneManagerment_LINQtoSQL
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
+        }
+
+        private void addTransactionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_AddTransaction form_addTrans = new Form_AddTransaction();
+            form_addTrans.ShowDialog();
         }
     }
 }
