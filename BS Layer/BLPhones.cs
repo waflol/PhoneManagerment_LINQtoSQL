@@ -10,14 +10,12 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
 {
     class BLPhones
     {
-        public DataSet GetPhones()
+        public Table<Phone> GetPhones()
         {
-            DataSet ds = new DataSet();
+
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            DataTable dt = new DataTable();
-            dt.Rows.Add(qlBH.Phones);
-            ds.Tables.Add(dt);
-            return ds;
+
+            return qlBH.Phones;
             
         }
 
@@ -36,6 +34,7 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             }
             
         }
+
         public bool addPhones(int ID_phone, string modelName, string ram, string frontCamera, string simtype, string networktype, string price, string finger, string istorage, string estorage, string rearcamera, string Display)
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
@@ -103,17 +102,15 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
 
         }
 
-        public DataSet search_ModelName(string namephone)
+        public IQueryable search_ModelName(string namephone)
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
+
             var Query = (from item in qlBH.Phones
                         where item.Model_Name.StartsWith(namephone)
                         select item);
-            dt.Rows.Add(Query);
-            ds.Tables.Add(dt);
-            return ds;
+
+            return Query;
         }
 
     }
