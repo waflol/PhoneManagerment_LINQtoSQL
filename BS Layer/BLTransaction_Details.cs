@@ -15,11 +15,11 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
         public IQueryable getTransaction_details()
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            var Query =  from cus in qlBH.Customers
-                         join trans in qlBH.Transactions on cus.ID_customer equals trans.ID_customer
-                         join trans_detail in qlBH.Transaction_Details on trans.ID_transaction equals trans_detail.ID_transaction
-                         join phone in qlBH.Phones on trans_detail.ID_phone equals phone.ID_phone into tt
-                         select new
+            var Query = from cus in qlBH.Customers
+                        join trans in qlBH.Transactions on cus.ID_customer equals trans.ID_customer
+                        join trans_detail in qlBH.Transaction_Details on trans.ID_transaction equals trans_detail.ID_transaction
+                        join phone in qlBH.Phones on trans_detail.ID_phone equals phone.ID_phone into tt
+                        select cus;
                          
 
 
@@ -54,24 +54,30 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
         public IQueryable search_byCusname(string cusname)
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            var Query = (from item in qlBH.Transaction_Details
-                         where item.ID_transaction.ToString().StartsWith(cusname)
-                         select item);
-            return Query;
+            IQueryable table = getTransaction_details();
+            var query = from item in table.
+
+;
         }
         public IQueryable search_byPhonename(string phonename)
         {
-            
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+
+            return Query;
         }
 
         public IQueryable search_byDate(string date)
         {
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
             
+            return Query;
         }
 
         public IQueryable search_byPhonenum(string phonenum)
         {
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
             
+            return Query;
         }
        
     }

@@ -10,11 +10,14 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
 {
     class BLPhones
     {
-        public Table<Phone> GetPhones()
+        public DataSet GetPhones()
         {
             DataSet ds = new DataSet();
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            return qlBH.Phones;
+            DataTable dt = new DataTable();
+            dt.Rows.Add(qlBH.Phones);
+            ds.Tables.Add(dt);
+            return ds;
             
         }
 
@@ -100,13 +103,17 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
 
         }
 
-        public IQueryable search_ModelName(string namephone)
+        public DataSet search_ModelName(string namephone)
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
             var Query = (from item in qlBH.Phones
                         where item.Model_Name.StartsWith(namephone)
                         select item);
-            return Query;
+            dt.Rows.Add(Query);
+            ds.Tables.Add(dt);
+            return ds;
         }
 
     }
