@@ -20,6 +20,7 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
 
         public bool checkAccount(string user, string pass)
         {
+
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
             var Query = (from item in qlBH.Accounts
                          where item.username.Equals(user)
@@ -33,7 +34,15 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
 
         public bool ExistAccount(string user)
         {
-            return false;
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+            var Query = (from item in qlBH.Accounts
+                         where item.username.Equals(user)
+                         select item).ToList();
+            if (Query.Count != 0)
+                return true;
+            else
+                return false;
+
 
         }
         // them phone
