@@ -17,7 +17,7 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
 
 
-            return qlBH.Accounts;
+            return qlBH.Customers;
         }
 
         public int returnMaxID()
