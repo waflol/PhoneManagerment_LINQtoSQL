@@ -11,11 +11,14 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
     class BLTransactions
     {
         
-        public Table<Transaction> GetTransactions()
+        public DataSet GetTransactions()
         {
             DataSet ds = new DataSet();
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            return qlBH.Transactions;
+            DataTable dt = new DataTable();
+            dt.Rows.Add(qlBH.Transactions);
+            ds.Tables.Add(dt);
+            return ds;
         }
 
         public int returnMaxID()
