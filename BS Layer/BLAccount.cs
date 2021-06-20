@@ -33,7 +33,8 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
 
         public bool ExistAccount(string user)
         {
-            
+            return false;
+
         }
         // them phone
         public bool addAccount(string user, string pass)
