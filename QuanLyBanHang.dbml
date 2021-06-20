@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PhoneDB" Class="QuanLyBanHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=PhoneDB;Integrated Security=True" SettingsObjectName="PhoneManagerment_LINQtoSQL.Properties.Settings" SettingsPropertyName="PhoneDBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MSI;Initial Catalog=PhoneDB;Integrated Security=True" SettingsObjectName="PhoneManagerment_LINQtoSQL.Properties.Settings" SettingsPropertyName="PhoneDBConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Accounts" Member="Accounts">
     <Type Name="Account">
       <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -36,8 +36,8 @@
   <Table Name="dbo.Transaction_Details" Member="Transaction_Details">
     <Type Name="Transaction_Detail">
       <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_transaction" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_phone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_transaction" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_phone" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Phone_Transaction_Detail" Member="Phone" ThisKey="ID_phone" OtherKey="ID_phone" Type="Phone" IsForeignKey="true" />
       <Association Name="Transaction_Transaction_Detail" Member="Transaction" ThisKey="ID_transaction" OtherKey="ID_transaction" Type="Transaction" IsForeignKey="true" />
     </Type>

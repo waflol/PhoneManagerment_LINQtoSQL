@@ -17,7 +17,7 @@ namespace PhoneManagerment_LINQtoSQL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormLogin());
-            Application.Run(new Form_Report());
+            Application.Run(new Form_Phone_Details());
         }
     }
 }

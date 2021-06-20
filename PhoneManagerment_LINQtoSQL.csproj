@@ -177,9 +177,6 @@
     <None Include="PhoneDB.xss">
       <DependentUpon>PhoneDB.xsd</DependentUpon>
     </None>
-    <None Include="QuanLyBanHang.dbml.layout">
-      <DependentUpon>QuanLyBanHang.dbml</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -193,6 +190,9 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>QuanLyBanHang.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBanHang.dbml.layout">
+      <DependentUpon>QuanLyBanHang.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
