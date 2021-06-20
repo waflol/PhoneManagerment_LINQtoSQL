@@ -23,26 +23,26 @@ namespace PhoneManagerment_LINQtoSQL
         void LoadData()
         {
             GridView_Details_Trans.DataSource = transaction_Detail.getTransaction_details();
-            GridView_Details_Trans.Columns[23].HeaderText = "Seller";
+            //GridView_Details_Trans.Columns[23].HeaderText = "Seller";
 
             // Ẩn các dòng ko cần thiết
 
-            GridView_Details_Trans.Columns[5].Visible = false;
-            GridView_Details_Trans.Columns[6].Visible = false;
-            GridView_Details_Trans.Columns[7].Visible = false;
-            GridView_Details_Trans.Columns[8].Visible = false;
-            GridView_Details_Trans.Columns[9].Visible = false;
-            GridView_Details_Trans.Columns[11].Visible = false;
-            GridView_Details_Trans.Columns[12].Visible = false;
-            GridView_Details_Trans.Columns[13].Visible = false;
-            GridView_Details_Trans.Columns[14].Visible = false;
-            GridView_Details_Trans.Columns[15].Visible = false;
-            GridView_Details_Trans.Columns[16].Visible = false;
-            GridView_Details_Trans.Columns[17].Visible = false;
-            GridView_Details_Trans.Columns[18].Visible = false;
-            GridView_Details_Trans.Columns[19].Visible = false;
-            GridView_Details_Trans.Columns[20].Visible = false;
-            GridView_Details_Trans.Columns[22].Visible = false;
+            //GridView_Details_Trans.Columns[5].Visible = false;
+            //GridView_Details_Trans.Columns[6].Visible = false;
+            //GridView_Details_Trans.Columns[7].Visible = false;
+            //GridView_Details_Trans.Columns[8].Visible = false;
+            //GridView_Details_Trans.Columns[9].Visible = false;
+            //GridView_Details_Trans.Columns[11].Visible = false;
+            //GridView_Details_Trans.Columns[12].Visible = false;
+            //GridView_Details_Trans.Columns[13].Visible = false;
+            //GridView_Details_Trans.Columns[14].Visible = false;
+            //GridView_Details_Trans.Columns[15].Visible = false;
+            //GridView_Details_Trans.Columns[16].Visible = false;
+            //GridView_Details_Trans.Columns[17].Visible = false;
+            //GridView_Details_Trans.Columns[18].Visible = false;
+            //GridView_Details_Trans.Columns[19].Visible = false;
+            //GridView_Details_Trans.Columns[20].Visible = false;
+            //GridView_Details_Trans.Columns[22].Visible = false;
 
             GridView_Details_Trans.AutoResizeColumns();
         }
@@ -53,7 +53,7 @@ namespace PhoneManagerment_LINQtoSQL
 
         private void txt_IDTrans_TextChanged(object sender, EventArgs e)
         {
-            GridView_Details_Trans.DataSource = transaction_Detail.search_byPhonenum(txt_IDTrans.Text);
+            //GridView_Details_Trans.DataSource = transaction_Detail.search_byPhonenum(txt_IDTrans.Text);
         }
 
         private void btn_remove_Click(object sender, EventArgs e)
