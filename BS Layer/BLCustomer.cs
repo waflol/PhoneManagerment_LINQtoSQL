@@ -11,11 +11,14 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
     class BLCustomer
     {
        
-        public Table<Customer> GetCustomers()
+        public DataSet GetCustomers()
         {
             DataSet ds = new DataSet();
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            return qlBH.Customers;
+            DataTable dt = new DataTable();
+            dt.Rows.Add(qlBH.Customers);
+            ds.Tables.Add(dt);
+            return ds;
         }
 
         public int returnMaxID()
