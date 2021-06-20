@@ -33,5 +33,15 @@ namespace PhoneManagerment_LINQtoSQL.Properties {
                 return ((string)(this["PhoneDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI;Initial Catalog=PhoneDB;Integrated Security=True")]
+        public string PhoneDBConnectionString1 {
+            get {
+                return ((string)(this["PhoneDBConnectionString1"]));
+            }
+        }
     }
 }

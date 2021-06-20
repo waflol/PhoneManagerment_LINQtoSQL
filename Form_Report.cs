@@ -17,5 +17,18 @@ namespace PhoneManagerment_LINQtoSQL
         {
             InitializeComponent();
         }
+
+        private void Form_Report_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'PhoneDB.Transactions' table. You can move, or remove it, as needed.
+          
+        }
+
+        private void Show_Button_Click(object sender, EventArgs e)
+        {
+            this.TransactionsTableAdapter.Fill(this.PhoneDB.Transactions,dateTimePicker1.Value.ToString());
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

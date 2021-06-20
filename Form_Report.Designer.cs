@@ -29,9 +29,17 @@ namespace PhoneManagerment_LINQtoSQL
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Show_Button = new System.Windows.Forms.Button();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.TransactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PhoneDB = new PhoneManagerment_LINQtoSQL.PhoneDB();
+            this.TransactionsTableAdapter = new PhoneManagerment_LINQtoSQL.PhoneDBTableAdapters.TransactionsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneDB)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,17 +67,48 @@ namespace PhoneManagerment_LINQtoSQL
             this.Show_Button.TabIndex = 5;
             this.Show_Button.Text = "Show";
             this.Show_Button.UseVisualStyleBackColor = true;
+            this.Show_Button.Click += new System.EventHandler(this.Show_Button_Click);
+            // 
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "PhoneDB";
+            reportDataSource1.Value = this.TransactionsBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "PhoneManagerment_LINQtoSQL.Report_TongTienBanDt.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 82);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(381, 246);
+            this.reportViewer1.TabIndex = 8;
+            // 
+            // TransactionsBindingSource
+            // 
+            this.TransactionsBindingSource.DataMember = "Transactions";
+            this.TransactionsBindingSource.DataSource = this.PhoneDB;
+            // 
+            // PhoneDB
+            // 
+            this.PhoneDB.DataSetName = "PhoneDB";
+            this.PhoneDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // TransactionsTableAdapter
+            // 
+            this.TransactionsTableAdapter.ClearBeforeFill = true;
             // 
             // Form_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(407, 387);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.Show_Button);
             this.Name = "Form_Report";
             this.Text = "Form_Report";
+            this.Load += new System.EventHandler(this.Form_Report_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.TransactionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneDB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,5 +119,9 @@ namespace PhoneManagerment_LINQtoSQL
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button Show_Button;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource TransactionsBindingSource;
+        private PhoneDB PhoneDB;
+        private PhoneDBTableAdapters.TransactionsTableAdapter TransactionsTableAdapter;
     }
 }
