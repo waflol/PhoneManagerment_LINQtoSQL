@@ -39,5 +39,10 @@ namespace PhoneManagerment_LINQtoSQL
         {
             LoadPhone();
         }
+
+        private void txt_PhoneID_TextChanged(object sender, EventArgs e)
+        {
+            GridView_PhoneRecord.DataSource = phones.search_ModelName(txt_PhoneID.Text);
+        }
     }
 }

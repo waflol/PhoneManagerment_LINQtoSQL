@@ -91,17 +91,13 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
 
         }
 
-        public Table<Phone> search_ModelName(string namephone)
+        public IQueryable search_ModelName(string namephone)
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            var Query = from item in qlBH.Phones
-                        where item.Model_Name == namephone
-                        select item;
-
-
-            Table<Phone> tbPhone = (Table<Phone>)Query;
-
-            return tbPhone;
+            var Query = (from item in qlBH.Phones
+                        where item.Model_Name.StartsWith(namephone)
+                        select item);
+            return Query;
         }
 
     }
