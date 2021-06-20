@@ -11,14 +11,12 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
     class BLAccount
     {
 
-        public DataSet GetAccount()
+        public Table<Account> GetAccount()
         {
-            DataSet ds = new DataSet();
+
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            DataTable dt = new DataTable();
-            dt.Rows.Add(qlBH.Accounts);
-            ds.Tables.Add(dt);
-            return ds;
+         
+            return qlBH.Accounts;
         }
 
         public bool checkAccount(string user, string pass)
