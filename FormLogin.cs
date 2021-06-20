@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PhoneManagerment_LINQtoSQL.BS_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace PhoneManagerment_LINQtoSQL
         public FormLogin()
         {
             InitializeComponent();
+        }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            BLPhones bLPhones = new BLPhones();
+            MessageBox.Show(bLPhones.ReturnMaxID().ToString());
         }
     }
 }

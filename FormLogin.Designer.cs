@@ -67,6 +67,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.btn_Login.TabIndex = 20;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = true;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // txt_Password
             // 
@@ -107,7 +108,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.lb_Username.TabIndex = 16;
             this.lb_Username.Text = "Username";
             // 
-            // Form1
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,7 +120,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.lb_Password);
             this.Controls.Add(this.lb_Username);
-            this.Name = "Form1";
+            this.Name = "FormLogin";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
