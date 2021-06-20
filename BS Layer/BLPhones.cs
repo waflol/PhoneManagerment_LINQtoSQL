@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Linq;
 using System.Data;
+using System.Windows.Forms;
 
 namespace PhoneManagerment_LINQtoSQL.BS_Layer
 {
@@ -51,10 +52,19 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             phone.estorage = estorage;
             phone.Rear_Camera = rearcamera;
             phone.Display = Display;
-
-            qlBH.Phones.InsertOnSubmit(phone);
-            qlBH.Phones.Context.SubmitChanges();
-            return true;
+            try
+            {
+                qlBH.Phones.InsertOnSubmit(phone);
+                qlBH.Phones.Context.SubmitChanges();
+                MessageBox.Show("Success");
+                return true;
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show("UnSuccess");
+                return false;
+            }
+            
 
 
 
@@ -68,9 +78,21 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
                           where item.ID_phone == int.Parse(IDphone)
                           select item;
 
-            qlBH.Phones.DeleteAllOnSubmit(Query);
-            qlBH.SubmitChanges();
-            return true;
+            
+            try
+            {
+                qlBH.Phones.DeleteAllOnSubmit(Query);
+                qlBH.SubmitChanges();
+                MessageBox.Show("Success");
+                return true;
+                
+                
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("UnSuccess");
+                return false;
+            }
 
         }
         // cap nhat phone
@@ -95,7 +117,20 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
                 Query.estorage = estorage;
                 Query.Rear_Camera = rearcamera;
                 Query.Display = Display;
-                qlBH.SubmitChanges();
+                try
+                {
+                    qlBH.SubmitChanges();
+                    MessageBox.Show("Success");
+                    
+
+
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("UnSuccess");
+                    return false;
+                }
+
             }
 
             return true;

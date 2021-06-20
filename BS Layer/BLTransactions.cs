@@ -5,6 +5,7 @@ using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PhoneManagerment_LINQtoSQL.BS_Layer
 {
@@ -46,9 +47,20 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             trans.Total_price = totalprice;
             trans.username = username;
             trans.Date = DateTime.Parse(date);
-            qlBH.Transactions.InsertOnSubmit(trans);
-            qlBH.Transactions.Context.SubmitChanges();
-            return true;
+            
+            try
+            {
+                qlBH.Transactions.InsertOnSubmit(trans);
+                qlBH.Transactions.Context.SubmitChanges();
+                MessageBox.Show("Success");
+                return true;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("UnSuccess");
+                return false;
+            }
+
         }
         //xoa phone
         public bool deleteTransaction(ref string err, string IDtrans)
@@ -59,9 +71,19 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
                         where item.ID_transaction == int.Parse(IDtrans)
                         select item;
 
-            qlBH.Transactions.DeleteAllOnSubmit(Query);
-            qlBH.SubmitChanges();
-            return true;
+            
+            try
+            {
+                qlBH.Transactions.DeleteAllOnSubmit(Query);
+                qlBH.SubmitChanges();
+                MessageBox.Show("Success");
+                return true;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("UnSuccess");
+                return false;
+            }
         }
         // cap nhat phone
         public bool updateTransaction(int idtrans, int totalprice, string date, int idcus, string username, ref string err)
@@ -78,7 +100,17 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
                 Query.Date = DateTime.Parse(date);
                 Query.ID_customer = idcus;
                 Query.username = username;
-                qlBH.SubmitChanges();
+                
+                try
+                {
+                    qlBH.SubmitChanges();
+                    MessageBox.Show("Success");
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("UnSuccess");
+                    return false;
+                }
             }
 
             return true;

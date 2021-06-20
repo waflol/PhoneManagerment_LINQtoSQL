@@ -5,6 +5,7 @@ using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PhoneManagerment_LINQtoSQL.BS_Layer
 {
@@ -38,7 +39,18 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             trans_detail.quantity = int.Parse(quantity);
             qlBH.Transaction_Details.InsertOnSubmit(trans_detail);
             qlBH.Transaction_Details.Context.SubmitChanges();
-            return true;
+            try
+            {
+                qlBH.Transaction_Details.InsertOnSubmit(trans_detail);
+                qlBH.Transaction_Details.Context.SubmitChanges();
+                MessageBox.Show("Success");
+                return true;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("UnSuccess");
+                return false;
+            }
         }
 
         public bool deleteTransaction_details(string idtransaction)
@@ -49,9 +61,19 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
                         where item.ID_transaction == int.Parse(idtransaction)
                         select item;
 
-            qlBH.Transaction_Details.DeleteAllOnSubmit(Query);
-            qlBH.SubmitChanges();
-            return true;
+            
+            try
+            {
+                qlBH.Transaction_Details.DeleteAllOnSubmit(Query);
+                qlBH.SubmitChanges();
+                MessageBox.Show("Success");
+                return true;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("UnSuccess");
+                return false;
+            }
         }
 
         public DataSet search_byCusname(string cusname)

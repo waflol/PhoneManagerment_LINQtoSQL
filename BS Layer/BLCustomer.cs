@@ -5,6 +5,7 @@ using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PhoneManagerment_LINQtoSQL.BS_Layer
 {
@@ -80,7 +81,17 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
                 Query.Customer_Name = cusname;
                 Query.PhoneNumber = phonenumber;
                 Query.Address = address;
-                qlBH.SubmitChanges();
+                try
+                {
+                    qlBH.SubmitChanges();
+                    MessageBox.Show("Success");
+                }
+                catch
+                {
+                    MessageBox.Show("UnSuccess");
+                    return false;
+                }
+                
             }
 
             return true;
