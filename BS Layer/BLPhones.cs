@@ -22,7 +22,15 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
             var query = (from phone in qlBH.Phones
                          select phone.ID_phone).Max();
-            return query;
+            try
+            {
+               return query;
+            }
+            catch
+            {
+                return -1;
+            }
+            
         }
         public bool addPhones(int ID_phone, string modelName, string ram, string frontCamera, string simtype, string networktype, string price, string finger, string istorage, string estorage, string rearcamera, string Display)
         {
