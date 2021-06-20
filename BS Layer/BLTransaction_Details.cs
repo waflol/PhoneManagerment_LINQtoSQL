@@ -12,7 +12,7 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
     {
        
 
-        public IQueryable getTransaction_details()
+        public DataSet getTransaction_details()
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
             var Query = from cus in qlBH.Customers
@@ -20,10 +20,13 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
                         join trans_detail in qlBH.Transaction_Details on trans.ID_transaction equals trans_detail.ID_transaction
                         join phone in qlBH.Phones on trans_detail.ID_phone equals phone.ID_phone into tt
                         select cus;
-                         
 
+            DataTable dt = new DataTable();
+            dt.Rows.Add(Query);
+            DataSet ds = new DataSet();
+            ds.Tables.Add(dt);
 
-            return Query;
+            return ds;
         }
 
         public bool addTransaction_details(string quantity, string idtransaction, string idphone)
@@ -51,33 +54,33 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             return true;
         }
 
-        public IQueryable search_byCusname(string cusname)
+        public DataSet search_byCusname(string cusname)
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            IQueryable table = getTransaction_details();
-            var query = from item in table.
+            DataSet table = getTransaction_details();
+            return table;
 
 ;
         }
-        public IQueryable search_byPhonename(string phonename)
+        public DataSet search_byPhonename(string phonename)
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-
-            return Query;
+            DataSet table = getTransaction_details();
+            return table;
         }
 
-        public IQueryable search_byDate(string date)
+        public DataSet search_byDate(string date)
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            
-            return Query;
+            DataSet table = getTransaction_details();
+            return table;
         }
 
-        public IQueryable search_byPhonenum(string phonenum)
+        public DataSet search_byPhonenum(string phonenum)
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            
-            return Query;
+            DataSet table = getTransaction_details();
+            return table;
         }
        
     }
