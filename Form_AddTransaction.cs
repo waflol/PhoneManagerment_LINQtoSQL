@@ -105,7 +105,7 @@ namespace PhoneManagerment_LINQtoSQL
         {
             try
             {
-                Phone_search_dataset = Phone.search_ModelName(Phone_Search_Textbox.Text);
+               // Phone_search_dataset = Phone.search_ModelName(Phone_Search_Textbox.Text);
 
                 if (Phone_search_dataset.Tables.Count > 0 && Phone_Search_Textbox.Text != "")
                 {

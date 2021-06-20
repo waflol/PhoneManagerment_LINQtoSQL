@@ -18,7 +18,7 @@ namespace PhoneManagerment_LINQtoSQL
 
         public Form_Edit_Phone(string namephone)
         {
-            Phone_search_dataset = Phone.search_ModelName(namephone);
+          //  Phone_search_dataset = Phone.search_ModelName(namephone);
             InitializeComponent();
             txt_ModelName.Text = namephone;
         }
@@ -27,7 +27,7 @@ namespace PhoneManagerment_LINQtoSQL
         {
             try
             {
-                Phone_search_dataset = Phone.search_ModelName(txt_ModelName.Text);
+              //  Phone_search_dataset = Phone.search_ModelName(txt_ModelName.Text);
 
                 if (Phone_search_dataset.Tables.Count > 0)
                 {
