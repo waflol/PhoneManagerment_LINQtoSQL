@@ -12,10 +12,10 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
     {
        
 
-        public Table<Transaction_Detail> getTransaction_details()
+        public IQueryable getTransaction_details()
         {
-            DataSet ds = new DataSet();
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+            var Query = from
             return qlBH.Transaction_Details;
         }
 
