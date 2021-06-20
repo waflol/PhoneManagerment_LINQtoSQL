@@ -58,17 +58,41 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_AddNewPhone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AddNewPhone.Designer.cs">
+      <DependentUpon>Form_AddNewPhone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_AddTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_AddTransaction.Designer.cs">
       <DependentUpon>Form_AddTransaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Edit_Phone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Edit_Phone.Designer.cs">
+      <DependentUpon>Form_Edit_Phone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Phone_Details.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Phone_Details.Designer.cs">
       <DependentUpon>Form_Phone_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Report.Designer.cs">
+      <DependentUpon>Form_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_TransactionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_TransactionDetails.Designer.cs">
+      <DependentUpon>Form_TransactionDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -86,8 +110,23 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_AddNewPhone.resx">
+      <DependentUpon>Form_AddNewPhone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AddTransaction.resx">
+      <DependentUpon>Form_AddTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Edit_Phone.resx">
+      <DependentUpon>Form_Edit_Phone.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Phone_Details.resx">
       <DependentUpon>Form_Phone_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Report.resx">
+      <DependentUpon>Form_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_TransactionDetails.resx">
+      <DependentUpon>Form_TransactionDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

@@ -13,6 +13,7 @@ namespace PhoneManagerment_LINQtoSQL
 {
     public partial class FormLogin : Form
     {
+        public static string currentAccount = "";
         public FormLogin()
         {
             InitializeComponent();
@@ -20,8 +21,49 @@ namespace PhoneManagerment_LINQtoSQL
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            BLPhones bLPhones = new BLPhones();
-            MessageBox.Show(bLPhones.ReturnMaxID().ToString());
+            string user = txt_Username.Text;
+            string pass = txt_Password.Text;
+            BLAccount acc = new BLAccount();
+
+            if (acc.checkAccount(user, pass))
+            {
+
+                currentAccount = user;
+                this.Visible = false;
+                Home obj2 = new Home();
+                obj2.ShowDialog();
+            }
+            else
+            {
+
+                MessageBox.Show("Invalid username and Password.");
+
+            }
+        }
+
+        private void txt_Password_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string user = txt_Username.Text;
+                string pass = txt_Password.Text;
+                BLAccount acc = new BLAccount();
+
+                if (acc.checkAccount(user, pass))
+                {
+
+                    currentAccount = user;
+                    this.Visible = false;
+                    Home obj2 = new Home();
+                    obj2.ShowDialog();
+                }
+                else
+                {
+
+                    MessageBox.Show("Invalid username and Password.");
+
+                }
+            }
         }
     }
 }

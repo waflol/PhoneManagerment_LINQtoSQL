@@ -37,9 +37,10 @@ namespace PhoneManagerment_LINQtoSQL
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.txt_PhoneID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_Edit = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phonesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_PhoneRecord)).BeginInit();
@@ -93,17 +94,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.label2.TabIndex = 53;
             this.label2.Text = "Phone Id";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(390, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(292, 31);
-            this.label1.TabIndex = 52;
-            this.label1.Text = "Delete Phone Record";
-            // 
             // btn_Delete
             // 
             this.btn_Delete.BackColor = System.Drawing.Color.Firebrick;
@@ -125,15 +115,39 @@ namespace PhoneManagerment_LINQtoSQL
             this.label3.TabIndex = 57;
             this.label3.Text = "label3";
             // 
+            // btn_Edit
+            // 
+            this.btn_Edit.BackColor = System.Drawing.Color.DarkGreen;
+            this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Edit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Edit.Location = new System.Drawing.Point(591, 165);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(78, 32);
+            this.btn_Edit.TabIndex = 58;
+            this.btn_Edit.Text = "Edit";
+            this.btn_Edit.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(458, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(224, 31);
+            this.label4.TabIndex = 59;
+            this.label4.Text = "Phone Available";
+            // 
             // Form_Phone_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.GridView_PhoneRecord);
             this.Controls.Add(this.txt_PhoneID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.label3);
             this.Name = "Form_Phone_Details";
@@ -157,8 +171,9 @@ namespace PhoneManagerment_LINQtoSQL
         private System.Windows.Forms.BindingSource bindingSource2;
         private System.Windows.Forms.TextBox txt_PhoneID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.Label label4;
     }
 }

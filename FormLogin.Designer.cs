@@ -77,6 +77,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.txt_Password.PasswordChar = '*';
             this.txt_Password.Size = new System.Drawing.Size(172, 26);
             this.txt_Password.TabIndex = 19;
+            this.txt_Password.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txt_Password_PreviewKeyDown);
             // 
             // txt_Username
             // 

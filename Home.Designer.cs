@@ -34,8 +34,8 @@ namespace PhoneManagerment_LINQtoSQL
             this.transactionDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPhoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phoneDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infomationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.benefitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_Home.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,8 +47,8 @@ namespace PhoneManagerment_LINQtoSQL
             this.transactionDetailToolStripMenuItem,
             this.addNewPhoneToolStripMenuItem,
             this.phoneDetailsToolStripMenuItem,
-            this.wareHouseToolStripMenuItem,
-            this.infomationToolStripMenuItem});
+            this.infomationToolStripMenuItem,
+            this.benefitToolStripMenuItem});
             this.menu_Home.Location = new System.Drawing.Point(0, 0);
             this.menu_Home.Name = "menu_Home";
             this.menu_Home.Size = new System.Drawing.Size(979, 33);
@@ -67,30 +67,34 @@ namespace PhoneManagerment_LINQtoSQL
             this.transactionDetailToolStripMenuItem.Name = "transactionDetailToolStripMenuItem";
             this.transactionDetailToolStripMenuItem.Size = new System.Drawing.Size(189, 29);
             this.transactionDetailToolStripMenuItem.Text = "Transaction details";
+            this.transactionDetailToolStripMenuItem.Click += new System.EventHandler(this.transactionDetailToolStripMenuItem_Click);
             // 
             // addNewPhoneToolStripMenuItem
             // 
             this.addNewPhoneToolStripMenuItem.Name = "addNewPhoneToolStripMenuItem";
             this.addNewPhoneToolStripMenuItem.Size = new System.Drawing.Size(165, 29);
             this.addNewPhoneToolStripMenuItem.Text = "Add new phone";
+            this.addNewPhoneToolStripMenuItem.Click += new System.EventHandler(this.addNewPhoneToolStripMenuItem_Click);
             // 
             // phoneDetailsToolStripMenuItem
             // 
             this.phoneDetailsToolStripMenuItem.Name = "phoneDetailsToolStripMenuItem";
             this.phoneDetailsToolStripMenuItem.Size = new System.Drawing.Size(143, 29);
             this.phoneDetailsToolStripMenuItem.Text = "Phone details";
-            // 
-            // wareHouseToolStripMenuItem
-            // 
-            this.wareHouseToolStripMenuItem.Name = "wareHouseToolStripMenuItem";
-            this.wareHouseToolStripMenuItem.Size = new System.Drawing.Size(127, 29);
-            this.wareHouseToolStripMenuItem.Text = "WareHouse";
+            this.phoneDetailsToolStripMenuItem.Click += new System.EventHandler(this.phoneDetailsToolStripMenuItem_Click);
             // 
             // infomationToolStripMenuItem
             // 
             this.infomationToolStripMenuItem.Name = "infomationToolStripMenuItem";
             this.infomationToolStripMenuItem.Size = new System.Drawing.Size(124, 29);
             this.infomationToolStripMenuItem.Text = "Infomation";
+            // 
+            // benefitToolStripMenuItem
+            // 
+            this.benefitToolStripMenuItem.Name = "benefitToolStripMenuItem";
+            this.benefitToolStripMenuItem.Size = new System.Drawing.Size(87, 29);
+            this.benefitToolStripMenuItem.Text = "Benefit";
+            this.benefitToolStripMenuItem.Click += new System.EventHandler(this.benefitToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -114,7 +118,7 @@ namespace PhoneManagerment_LINQtoSQL
         private System.Windows.Forms.ToolStripMenuItem transactionDetailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewPhoneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phoneDetailsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem wareHouseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infomationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem benefitToolStripMenuItem;
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PhoneManagerment_LINQtoSQL.BS_Layer;
 
 namespace PhoneManagerment_LINQtoSQL
 {
