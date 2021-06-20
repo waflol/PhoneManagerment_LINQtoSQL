@@ -38,7 +38,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.txt_PhoneID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Delete = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).BeginInit();
@@ -106,15 +105,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(400, 131);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 57;
-            this.label3.Text = "label3";
-            // 
             // btn_Edit
             // 
             this.btn_Edit.BackColor = System.Drawing.Color.DarkGreen;
@@ -149,7 +139,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.Controls.Add(this.txt_PhoneID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Delete);
-            this.Controls.Add(this.label3);
             this.Name = "Form_Phone_Details";
             this.Text = "Form_Phone_Details";
             this.Load += new System.EventHandler(this.Form_Phone_Details_Load);
@@ -172,7 +161,6 @@ namespace PhoneManagerment_LINQtoSQL
         private System.Windows.Forms.TextBox txt_PhoneID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_Delete;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Label label4;
     }
