@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.625" name="QuanLyBanHang">
+  <DataContextMoniker Name="/QuanLyBanHangDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2f6949d7-3f0c-430f-81f7-1be91f55a66e" absoluteBounds="1.25, 0.875, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/QuanLyBanHangDataContext/Account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a2476466-1e1e-4c14-806a-505b4dbd3ecf" absoluteBounds="1.2650000000000001, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2ba2257b-1765-407a-995a-d03cb6bfbb89" absoluteBounds="1.25, 3.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuanLyBanHangDataContext/Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="132b6e89-40d0-44c4-b7a7-183bca076473" absoluteBounds="1.2650000000000001, 4.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f76299f7-f6cc-4d9b-9a1b-962daf5a84da" absoluteBounds="4, 5.25, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/QuanLyBanHangDataContext/Phone" />
+      <nestedChildShapes>
+        <elementListCompartment Id="073a7e4d-572e-4e94-a547-c5b444e4baef" absoluteBounds="4.0150000000000006, 5.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a1874447-1d91-4e9b-b6cb-dce2503d9375" absoluteBounds="6.75, 0.75, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/QuanLyBanHangDataContext/Transaction_Detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bffdda7e-6275-486c-82cc-b3bc8c9f6e75" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="84a2f111-8562-4cab-979f-cb0a3e3f82cf" absoluteBounds="4, 0.5, 2, 1.7708968098958333">
+      <DataClassMoniker Name="/QuanLyBanHangDataContext/Transaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd311e74-85b2-4e51-9f1d-11c5d725cbbe" absoluteBounds="4.0150000000000006, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6 : 6.80850341796875); (7.75 : 6.80850341796875); (7.75 : 2.1362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyBanHangDataContext/Phone/Phone_Transaction_Detail" />
+      <nodes>
+        <classShapeMoniker Id="f76299f7-f6cc-4d9b-9a1b-962daf5a84da" />
+        <classShapeMoniker Id="a1874447-1d91-4e9b-b6cb-dce2503d9375" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 1.44314697265625); (6.75 : 1.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyBanHangDataContext/Transaction/Transaction_Transaction_Detail" />
+      <nodes>
+        <classShapeMoniker Id="84a2f111-8562-4cab-979f-cb0a3e3f82cf" />
+        <classShapeMoniker Id="a1874447-1d91-4e9b-b6cb-dce2503d9375" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.25 : 4.41429768880208); (5 : 4.41429768880208); (5 : 2.27089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyBanHangDataContext/Customer/Customer_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="2ba2257b-1765-407a-995a-d03cb6bfbb89" />
+        <classShapeMoniker Id="84a2f111-8562-4cab-979f-cb0a3e3f82cf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.25 : 1.47199625651042); (4 : 1.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuanLyBanHangDataContext/Account/Account_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="2f6949d7-3f0c-430f-81f7-1be91f55a66e" />
+        <classShapeMoniker Id="84a2f111-8562-4cab-979f-cb0a3e3f82cf" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
