@@ -33,6 +33,15 @@
       <Association Name="Customer_Transaction" Member="Transactions" ThisKey="ID_customer" OtherKey="ID_customer" Type="Transaction" />
     </Type>
   </Table>
+  <Table Name="dbo.Transaction_Details" Member="Transaction_Details">
+    <Type Name="Transaction_Detail">
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_transaction" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_phone" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Phone_Transaction_Detail" Member="Phone" ThisKey="ID_phone" OtherKey="ID_phone" Type="Phone" IsForeignKey="true" />
+      <Association Name="Transaction_Transaction_Detail" Member="Transaction" ThisKey="ID_transaction" OtherKey="ID_transaction" Type="Transaction" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Transactions" Member="Transactions">
     <Type Name="Transaction">
       <Column Name="ID_transaction" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -43,15 +52,6 @@
       <Association Name="Transaction_Transaction_Detail" Member="Transaction_Details" ThisKey="ID_transaction" OtherKey="ID_transaction" Type="Transaction_Detail" />
       <Association Name="Customer_Transaction" Member="Customer" ThisKey="ID_customer" OtherKey="ID_customer" Type="Customer" IsForeignKey="true" />
       <Association Name="Account_Transaction" Member="Account" ThisKey="username" OtherKey="username" Type="Account" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Transaction_Details" Member="Transaction_Details">
-    <Type Name="Transaction_Detail">
-      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_transaction" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_phone" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Phone_Transaction_Detail" Member="Phone" ThisKey="ID_phone" OtherKey="ID_phone" Type="Phone" IsForeignKey="true" />
-      <Association Name="Transaction_Transaction_Detail" Member="Transaction" ThisKey="ID_transaction" OtherKey="ID_transaction" Type="Transaction" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
