@@ -167,9 +167,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="QuanLyBanHang.dbml.layout">
-      <DependentUpon>QuanLyBanHang.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="Report_TongTienBanDt.rdlc" />
     <None Include="packages.config" />
     <None Include="PhoneDB.xsc">
@@ -204,6 +201,9 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>QuanLyBanHang.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBanHang.dbml.layout">
+      <DependentUpon>QuanLyBanHang.dbml</DependentUpon>
     </None>
     <None Include="Resources\Login.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
