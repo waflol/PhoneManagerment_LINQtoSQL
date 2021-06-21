@@ -64,6 +64,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.GridView_PhoneRecord.RowHeadersVisible = false;
             this.GridView_PhoneRecord.Size = new System.Drawing.Size(1007, 236);
             this.GridView_PhoneRecord.TabIndex = 56;
+            this.GridView_PhoneRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_PhoneRecord_CellClick);
             // 
             // bindingSource1
             // 

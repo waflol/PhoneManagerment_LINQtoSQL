@@ -27,20 +27,19 @@ namespace PhoneManagerment_LINQtoSQL
         {
             try
             {
-              //  Phone_search_dataset = Phone.search_ModelName(txt_ModelName.Text);
+                dataGridView1.DataSource = Phone.search_ModelName(txt_ModelName.Text);
 
-                if (Phone_search_dataset.Tables.Count > 0)
+                if (dataGridView1.Rows.Count > 0)
                 {
-                    cbb_Ram.Text = Phone_search_dataset.Tables[0].Rows[0][1].ToString();
-                    cbb_InternalStorage.Text = Phone_search_dataset.Tables[0].Rows[0][8].ToString();
-                    cbb_Display.Text = Phone_search_dataset.Tables[0].Rows[0][3].ToString();
-                    cbb_SimType.Text = Phone_search_dataset.Tables[0].Rows[0][4].ToString();
-                    cbb_RearCamera.Text = Phone_search_dataset.Tables[0].Rows[0][10].ToString();
-                    txt_Price.Text = Phone_search_dataset.Tables[0].Rows[0][6].ToString();
-                    cbb_FingerprintSensor.Text = Phone_search_dataset.Tables[0].Rows[0][7].ToString();
-                    cbb_FrontCamera.Text = Phone_search_dataset.Tables[0].Rows[0][2].ToString();
-                    cbb_NetworkType.Text = Phone_search_dataset.Tables[0].Rows[0][5].ToString();
-                    //label10.Text = temp_phoneID;Phone_search_dataset.Tables[0].Rows[0][6].ToString();
+                    cbb_Ram.Text = dataGridView1.Rows[0].Cells[1].Value.ToString(); 
+                    cbb_InternalStorage.Text = dataGridView1.Rows[0].Cells[8].Value.ToString();
+                    cbb_Display.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
+                    cbb_SimType.Text = dataGridView1.Rows[0].Cells[4].Value.ToString();
+                    cbb_RearCamera.Text = dataGridView1.Rows[0].Cells[10].Value.ToString(); 
+                    txt_Price.Text = dataGridView1.Rows[0].Cells[6].Value.ToString();
+                    cbb_FingerprintSensor.Text = dataGridView1.Rows[0].Cells[7].Value.ToString();
+                    cbb_FrontCamera.Text = dataGridView1.Rows[0].Cells[2].Value.ToString();
+                    cbb_NetworkType.Text = dataGridView1.Rows[0].Cells[5].Value.ToString();
                 }
                 else
                     throw new Exception();

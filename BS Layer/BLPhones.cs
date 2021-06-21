@@ -142,7 +142,7 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
 
             var Query = (from item in qlBH.Phones
-                        where item.Model_Name.StartsWith(namephone)
+                        where item.Model_Name.Contains(namephone)
                         select item);
 
             return Query;
