@@ -12,7 +12,7 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
     class BLTransaction_Details
     {
        
-
+        
         public IQueryable getTransaction_details()
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
@@ -73,34 +73,53 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             }
         }
 
-//        public Table<object> search_byCusname(string cusname)
-//        {
-//            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-//            DataSet table = getTransaction_details();
-//            return table;
+        public IQueryable search_bycusname(string cusname)
+        {
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+            var Query = from trans in qlBH.Transactions
+                        join cus in qlBH.Customers on trans.ID_customer equals cus.ID_customer
+                        join trans_detail in qlBH.Transaction_Details on trans.ID_transaction equals trans_detail.ID_transaction
+                        join phone in qlBH.Phones on trans_detail.ID_phone equals phone.ID_phone
+                        where cus.Customer_Name.StartsWith(cusname)
+                        select new { cus.Customer_Name, cus.PhoneNumber, cus.Address, cus.ID_customer, phone.Model_Name, phone.Price, trans_detail.quantity, trans.Date, trans.username };
+            return Query;
+        }
 
-//;
-//        }
-//        public Table<object> search_byPhonename(string phonename)
-//        {
-//            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-//            DataSet table = ;
-//            return table;
-//        }
+        public IQueryable search_byPhonename(string phonename)
+        {
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+            var Query = from trans in qlBH.Transactions
+                        join cus in qlBH.Customers on trans.ID_customer equals cus.ID_customer
+                        join trans_detail in qlBH.Transaction_Details on trans.ID_transaction equals trans_detail.ID_transaction
+                        join phone in qlBH.Phones on trans_detail.ID_phone equals phone.ID_phone
+                        where cus.PhoneNumber.StartsWith(phonename)
+                        select new { cus.Customer_Name, cus.PhoneNumber, cus.Address, cus.ID_customer, phone.Model_Name, phone.Price, trans_detail.quantity, trans.Date, trans.username };
+            return Query;
+        }
 
-//        public Table<object> search_byDate(string date)
-//        {
-//            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-//            Table<object> tb = new Table<Object>();
-//            return table;
-//        }
+        public IQueryable search_byDate(string date)
+        {
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+            var Query = from trans in qlBH.Transactions
+                        join cus in qlBH.Customers on trans.ID_customer equals cus.ID_customer
+                        join trans_detail in qlBH.Transaction_Details on trans.ID_transaction equals trans_detail.ID_transaction
+                        join phone in qlBH.Phones on trans_detail.ID_phone equals phone.ID_phone
+                        where trans.Date.Equals(DateTime.Parse(date))
+                        select new { cus.Customer_Name, cus.PhoneNumber, cus.Address, cus.ID_customer, phone.Model_Name, phone.Price, trans_detail.quantity, trans.Date, trans.username };
+            return Query;
+        }
 
-//        public Table<object> search_byPhonenum(string phonenum)
-//        {
-//            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-//            DataSet table = getTransaction_details();
-//            return table;
-//        }
-       
+        public IQueryable search_byPhonenum(string phonenum)
+        {
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+            var Query = from trans in qlBH.Transactions
+                        join cus in qlBH.Customers on trans.ID_customer equals cus.ID_customer
+                        join trans_detail in qlBH.Transaction_Details on trans.ID_transaction equals trans_detail.ID_transaction
+                        join phone in qlBH.Phones on trans_detail.ID_phone equals phone.ID_phone
+                        where cus.PhoneNumber.StartsWith(phonenum)
+                        select new { cus.Customer_Name, cus.PhoneNumber, cus.Address, cus.ID_customer, phone.Model_Name, phone.Price, trans_detail.quantity, trans.Date, trans.username };
+            return Query;
+        }
+
     }
 }

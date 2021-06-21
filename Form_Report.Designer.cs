@@ -31,16 +31,26 @@ namespace PhoneManagerment_LINQtoSQL
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.TransactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PhoneDB = new PhoneManagerment_LINQtoSQL.PhoneDB();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Show_Button = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.TransactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PhoneDB = new PhoneManagerment_LINQtoSQL.PhoneDB();
             this.TransactionsTableAdapter = new PhoneManagerment_LINQtoSQL.PhoneDBTableAdapters.TransactionsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.TransactionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneDB)).BeginInit();
             this.SuspendLayout();
+            // 
+            // TransactionsBindingSource
+            // 
+            this.TransactionsBindingSource.DataMember = "Transactions";
+            this.TransactionsBindingSource.DataSource = this.PhoneDB;
+            // 
+            // PhoneDB
+            // 
+            this.PhoneDB.DataSetName = "PhoneDB";
+            this.PhoneDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -81,16 +91,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.reportViewer1.Size = new System.Drawing.Size(381, 246);
             this.reportViewer1.TabIndex = 8;
             // 
-            // TransactionsBindingSource
-            // 
-            this.TransactionsBindingSource.DataMember = "Transactions";
-            this.TransactionsBindingSource.DataSource = this.PhoneDB;
-            // 
-            // PhoneDB
-            // 
-            this.PhoneDB.DataSetName = "PhoneDB";
-            this.PhoneDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // TransactionsTableAdapter
             // 
             this.TransactionsTableAdapter.ClearBeforeFill = true;
@@ -99,7 +99,7 @@ namespace PhoneManagerment_LINQtoSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 387);
+            this.ClientSize = new System.Drawing.Size(407, 337);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);

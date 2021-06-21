@@ -206,6 +206,15 @@
       <DependentUpon>QuanLyBanHang.dbml</DependentUpon>
     </None>
     <None Include="Resources\Login.jpg" />
+    <None Include="Resources\84f355b7203c4435a8bcdaad90553032.gif" />
+    <None Include="Resources\coin.gif" />
+    <None Include="Resources\city.gif" />
+    <None Include="Resources\giphy.gif" />
+    <None Include="Resources\phone.gif" />
+    <None Include="Resources\handshake.gif" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\iphone.gif" />
+    <None Include="Resources\editphone.gif" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

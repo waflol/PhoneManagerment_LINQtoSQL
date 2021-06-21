@@ -39,7 +39,7 @@ namespace PhoneManagerment_LINQtoSQL {
         private List<string> phoneID = new List<string>();
         // phone id tạm để gán
         private string temp_phoneID;
-
+        private string temp_phoneID_remove;
         private bool isAlready(string PhoneName) {
             for (int i = 0; i < GridView_Cart.Rows.Count; i++) {
                 if (GridView_Cart.Rows[i].Cells[0].Value != null) {
@@ -91,7 +91,7 @@ namespace PhoneManagerment_LINQtoSQL {
                 if (GridView_Cart.Rows[index_remove].Cells[0].Value != null) {
                     // gán phone trong datagridview đã chọn
                     Phone_remove = GridView_Cart.Rows[index_remove].Cells[0].Value.ToString();
-                    //temp_phoneID_remove= GridView_Cart.Rows[index_remove].Cells[11].Value.ToString()
+                    temp_phoneID_remove = GridView_Cart.Rows[index_remove].Cells[11].Value.ToString();
                 }
             } catch { }
         }
@@ -111,10 +111,11 @@ namespace PhoneManagerment_LINQtoSQL {
         private void Export_Button_Click(object sender, EventArgs e) {
             customer.addCustomer(Name_Textbox.Text, Phone_Number_Textbox.Text, Address_Textbox.Text, customer.returnMaxID() + 1);
             transaction.addTransaction(transaction.returnMaxID() + 1, Total_cost, dtpk_BuyDate.Value.ToString(), customer.returnMaxID(), FormLogin.currentAccount);
-
+            
             ///int index_Row = 0;
             for (int i = 0; i < phoneID.Count; i++) {
                 transaction_Detail.addTransaction_details((GridView_Cart[2, i].Value.ToString()), transaction.returnMaxID().ToString(), phoneID[i]);
+                
             }
             clearall_form();
         }
@@ -146,7 +147,7 @@ namespace PhoneManagerment_LINQtoSQL {
                     txt_sim.Text = dataGridView1.Rows[0].Cells[4].Value.ToString();
                     txt_camera.Text = dataGridView1.Rows[0].Cells[10].Value.ToString();
                     txt_Price.Text = dataGridView1.Rows[0].Cells[6].Value.ToString();
-                    //label10.Text = temp_phoneID;
+                    temp_phoneID = dataGridView1.Rows[0].Cells[11].Value.ToString();
                 } else {
                     throw new Exception();
                 }

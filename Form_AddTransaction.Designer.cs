@@ -32,7 +32,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.label4 = new System.Windows.Forms.Label();
             this.Reset_Button = new System.Windows.Forms.Button();
             this.Remove_Button = new System.Windows.Forms.Button();
-            this.Export_Button = new System.Windows.Forms.Button();
             this.Total_Cost_Textbox = new System.Windows.Forms.TextBox();
             this.Total_Price_Label = new System.Windows.Forms.Label();
             this.GridView_Cart = new System.Windows.Forms.DataGridView();
@@ -64,7 +63,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.Customer_Panel = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpk_BuyDate = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Phone_Number_Textbox = new System.Windows.Forms.TextBox();
             this.Address_Textbox = new System.Windows.Forms.TextBox();
             this.Name_Textbox = new System.Windows.Forms.TextBox();
@@ -76,12 +74,14 @@ namespace PhoneManagerment_LINQtoSQL
             this.Address_Label = new System.Windows.Forms.Label();
             this.Phone_Number_Label = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Export_Button = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Cart)).BeginInit();
             this.Phone_Info_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Quantity)).BeginInit();
             this.Customer_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -115,19 +115,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.Remove_Button.UseVisualStyleBackColor = true;
             this.Remove_Button.Click += new System.EventHandler(this.Remove_Button_Click);
             // 
-            // Export_Button
-            // 
-            this.Export_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Export_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Export_Button.Location = new System.Drawing.Point(664, 327);
-            this.Export_Button.Name = "Export_Button";
-            this.Export_Button.Size = new System.Drawing.Size(118, 111);
-            this.Export_Button.TabIndex = 22;
-            this.Export_Button.Text = "OK - Deal";
-            this.Export_Button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Export_Button.UseVisualStyleBackColor = true;
-            this.Export_Button.Click += new System.EventHandler(this.Export_Button_Click);
-            // 
             // Total_Cost_Textbox
             // 
             this.Total_Cost_Textbox.Enabled = false;
@@ -141,7 +128,7 @@ namespace PhoneManagerment_LINQtoSQL
             // 
             this.Total_Price_Label.AutoSize = true;
             this.Total_Price_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total_Price_Label.Location = new System.Drawing.Point(372, 343);
+            this.Total_Price_Label.Location = new System.Drawing.Point(492, 343);
             this.Total_Price_Label.Name = "Total_Price_Label";
             this.Total_Price_Label.Size = new System.Drawing.Size(56, 24);
             this.Total_Price_Label.TabIndex = 20;
@@ -380,7 +367,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Phone_Inf_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.Phone_Inf_Label.Location = new System.Drawing.Point(145, 7);
             this.Phone_Inf_Label.Name = "Phone_Inf_Label";
-            this.Phone_Inf_Label.Size = new System.Drawing.Size(127, 16);
+            this.Phone_Inf_Label.Size = new System.Drawing.Size(134, 16);
             this.Phone_Inf_Label.TabIndex = 8;
             this.Phone_Inf_Label.Text = "Phone Infomation";
             // 
@@ -457,15 +444,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.dtpk_BuyDate.Size = new System.Drawing.Size(151, 20);
             this.dtpk_BuyDate.TabIndex = 12;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 42);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // Phone_Number_Textbox
             // 
             this.Phone_Number_Textbox.BackColor = System.Drawing.SystemColors.Control;
@@ -524,7 +502,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Customer_Inf_Label.ForeColor = System.Drawing.Color.Blue;
             this.Customer_Inf_Label.Location = new System.Drawing.Point(105, 4);
             this.Customer_Inf_Label.Name = "Customer_Inf_Label";
-            this.Customer_Inf_Label.Size = new System.Drawing.Size(148, 16);
+            this.Customer_Inf_Label.Size = new System.Drawing.Size(157, 16);
             this.Customer_Inf_Label.TabIndex = 3;
             this.Customer_Inf_Label.Text = "Customer Infomation";
             // 
@@ -569,6 +547,30 @@ namespace PhoneManagerment_LINQtoSQL
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 26;
             // 
+            // Export_Button
+            // 
+            this.Export_Button.BackgroundImage = global::PhoneManagerment_LINQtoSQL.Properties.Resources.handshake;
+            this.Export_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Export_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Export_Button.Location = new System.Drawing.Point(664, 327);
+            this.Export_Button.Name = "Export_Button";
+            this.Export_Button.Size = new System.Drawing.Size(118, 111);
+            this.Export_Button.TabIndex = 22;
+            this.Export_Button.Text = "OK - Deal";
+            this.Export_Button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Export_Button.UseVisualStyleBackColor = true;
+            this.Export_Button.Click += new System.EventHandler(this.Export_Button_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources.images;
+            this.pictureBox1.Location = new System.Drawing.Point(3, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form_AddTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -592,8 +594,8 @@ namespace PhoneManagerment_LINQtoSQL
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Quantity)).EndInit();
             this.Customer_Panel.ResumeLayout(false);
             this.Customer_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

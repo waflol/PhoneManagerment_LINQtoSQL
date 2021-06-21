@@ -29,35 +29,17 @@ namespace PhoneManagerment_LINQtoSQL
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_remove = new System.Windows.Forms.Button();
             this.txt_IDTrans = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.GridView_Details_Trans = new System.Windows.Forms.DataGridView();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Details_Trans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_Details_Trans)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(42, 41);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(107, 67);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(690, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // btn_remove
             // 
@@ -106,20 +88,40 @@ namespace PhoneManagerment_LINQtoSQL
             // GridView_Details_Trans
             // 
             this.GridView_Details_Trans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView_Details_Trans.Location = new System.Drawing.Point(39, 113);
+            this.GridView_Details_Trans.Location = new System.Drawing.Point(11, 142);
             this.GridView_Details_Trans.Margin = new System.Windows.Forms.Padding(2);
             this.GridView_Details_Trans.Name = "GridView_Details_Trans";
             this.GridView_Details_Trans.RowHeadersWidth = 51;
             this.GridView_Details_Trans.RowTemplate.Height = 24;
-            this.GridView_Details_Trans.Size = new System.Drawing.Size(722, 297);
+            this.GridView_Details_Trans.Size = new System.Drawing.Size(790, 297);
             this.GridView_Details_Trans.TabIndex = 7;
             this.GridView_Details_Trans.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_Details_Trans_CellClick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources._84f355b7203c4435a8bcdaad90553032;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(181, 97);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources.coin;
+            this.pictureBox1.Location = new System.Drawing.Point(641, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // Form_TransactionDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(807, 450);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_remove);
@@ -130,9 +132,9 @@ namespace PhoneManagerment_LINQtoSQL
             this.Name = "Form_TransactionDetails";
             this.Text = "Form_TransactionDetails";
             this.Load += new System.EventHandler(this.Form_TransactionDetails_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Details_Trans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_Details_Trans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
