@@ -30,25 +30,25 @@ namespace PhoneManagerment_LINQtoSQL
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertPhone(Phone instance);
-    partial void UpdatePhone(Phone instance);
-    partial void DeletePhone(Phone instance);
     partial void InsertAccount(Account instance);
     partial void UpdateAccount(Account instance);
     partial void DeleteAccount(Account instance);
     partial void InsertCustomer(Customer instance);
     partial void UpdateCustomer(Customer instance);
     partial void DeleteCustomer(Customer instance);
-    partial void InsertTransaction(Transaction instance);
-    partial void UpdateTransaction(Transaction instance);
-    partial void DeleteTransaction(Transaction instance);
+    partial void InsertPhone(Phone instance);
+    partial void UpdatePhone(Phone instance);
+    partial void DeletePhone(Phone instance);
     partial void InsertTransaction_Detail(Transaction_Detail instance);
     partial void UpdateTransaction_Detail(Transaction_Detail instance);
     partial void DeleteTransaction_Detail(Transaction_Detail instance);
+    partial void InsertTransaction(Transaction instance);
+    partial void UpdateTransaction(Transaction instance);
+    partial void DeleteTransaction(Transaction instance);
     #endregion
 		
 		public QuanLyBanHangDataContext() : 
-				base(global::PhoneManagerment_LINQtoSQL.Properties.Settings.Default.PhoneDBConnectionString2, mappingSource)
+				base(global::PhoneManagerment_LINQtoSQL.Properties.Settings.Default.PhoneDBConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -77,14 +77,6 @@ namespace PhoneManagerment_LINQtoSQL
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Phone> Phones
-		{
-			get
-			{
-				return this.GetTable<Phone>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Account> Accounts
 		{
 			get
@@ -101,11 +93,11 @@ namespace PhoneManagerment_LINQtoSQL
 			}
 		}
 		
-		public System.Data.Linq.Table<Transaction> Transactions
+		public System.Data.Linq.Table<Phone> Phones
 		{
 			get
 			{
-				return this.GetTable<Transaction>();
+				return this.GetTable<Phone>();
 			}
 		}
 		
@@ -115,6 +107,290 @@ namespace PhoneManagerment_LINQtoSQL
 			{
 				return this.GetTable<Transaction_Detail>();
 			}
+		}
+		
+		public System.Data.Linq.Table<Transaction> Transactions
+		{
+			get
+			{
+				return this.GetTable<Transaction>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Accounts")]
+	public partial class Account : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _username;
+		
+		private string _password;
+		
+		private EntitySet<Transaction> _Transactions1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    #endregion
+		
+		public Account()
+		{
+			this._Transactions1 = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions1), new Action<Transaction>(this.detach_Transactions1));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Transaction1", Storage="_Transactions1", ThisKey="username", OtherKey="username")]
+		public EntitySet<Transaction> Transactions1
+		{
+			get
+			{
+				return this._Transactions1;
+			}
+			set
+			{
+				this._Transactions1.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Transactions1(Transaction entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account1 = this;
+		}
+		
+		private void detach_Transactions1(Transaction entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customer")]
+	public partial class Customer : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Customer_Name;
+		
+		private string _PhoneNumber;
+		
+		private string _Address;
+		
+		private int _ID_customer;
+		
+		private EntitySet<Transaction> _Transactions1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCustomer_NameChanging(string value);
+    partial void OnCustomer_NameChanged();
+    partial void OnPhoneNumberChanging(string value);
+    partial void OnPhoneNumberChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnID_customerChanging(int value);
+    partial void OnID_customerChanged();
+    #endregion
+		
+		public Customer()
+		{
+			this._Transactions1 = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions1), new Action<Transaction>(this.detach_Transactions1));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Customer_Name
+		{
+			get
+			{
+				return this._Customer_Name;
+			}
+			set
+			{
+				if ((this._Customer_Name != value))
+				{
+					this.OnCustomer_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Customer_Name = value;
+					this.SendPropertyChanged("Customer_Name");
+					this.OnCustomer_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this.OnPhoneNumberChanging(value);
+					this.SendPropertyChanging();
+					this._PhoneNumber = value;
+					this.SendPropertyChanged("PhoneNumber");
+					this.OnPhoneNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_customer", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_customer
+		{
+			get
+			{
+				return this._ID_customer;
+			}
+			set
+			{
+				if ((this._ID_customer != value))
+				{
+					this.OnID_customerChanging(value);
+					this.SendPropertyChanging();
+					this._ID_customer = value;
+					this.SendPropertyChanged("ID_customer");
+					this.OnID_customerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Transaction1", Storage="_Transactions1", ThisKey="ID_customer", OtherKey="ID_customer")]
+		public EntitySet<Transaction> Transactions1
+		{
+			get
+			{
+				return this._Transactions1;
+			}
+			set
+			{
+				this._Transactions1.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Transactions1(Transaction entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer1 = this;
+		}
+		
+		private void detach_Transactions1(Transaction entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer1 = null;
 		}
 	}
 	
@@ -148,7 +424,7 @@ namespace PhoneManagerment_LINQtoSQL
 		
 		private int _ID_phone;
 		
-		private EntitySet<Transaction_Detail> _Transaction_Details;
+		private EntitySet<Transaction_Detail> _Transaction_Details1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -182,7 +458,7 @@ namespace PhoneManagerment_LINQtoSQL
 		
 		public Phone()
 		{
-			this._Transaction_Details = new EntitySet<Transaction_Detail>(new Action<Transaction_Detail>(this.attach_Transaction_Details), new Action<Transaction_Detail>(this.detach_Transaction_Details));
+			this._Transaction_Details1 = new EntitySet<Transaction_Detail>(new Action<Transaction_Detail>(this.attach_Transaction_Details1), new Action<Transaction_Detail>(this.detach_Transaction_Details1));
 			OnCreated();
 		}
 		
@@ -426,16 +702,16 @@ namespace PhoneManagerment_LINQtoSQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phone_Transaction_Detail", Storage="_Transaction_Details", ThisKey="ID_phone", OtherKey="ID_phone")]
-		public EntitySet<Transaction_Detail> Transaction_Details
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phone_Transaction_Detail1", Storage="_Transaction_Details1", ThisKey="ID_phone", OtherKey="ID_phone")]
+		public EntitySet<Transaction_Detail> Transaction_Details1
 		{
 			get
 			{
-				return this._Transaction_Details;
+				return this._Transaction_Details1;
 			}
 			set
 			{
-				this._Transaction_Details.Assign(value);
+				this._Transaction_Details1.Assign(value);
 			}
 		}
 		
@@ -459,97 +735,187 @@ namespace PhoneManagerment_LINQtoSQL
 			}
 		}
 		
-		private void attach_Transaction_Details(Transaction_Detail entity)
+		private void attach_Transaction_Details1(Transaction_Detail entity)
 		{
 			this.SendPropertyChanging();
-			entity.Phone = this;
+			entity.Phone1 = this;
 		}
 		
-		private void detach_Transaction_Details(Transaction_Detail entity)
+		private void detach_Transaction_Details1(Transaction_Detail entity)
 		{
 			this.SendPropertyChanging();
-			entity.Phone = null;
+			entity.Phone1 = null;
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Accounts")]
-	public partial class Account : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Transaction_Details")]
+	public partial class Transaction_Detail : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _username;
+		private int _quantity;
 		
-		private string _password;
+		private int _ID_transaction;
 		
-		private EntitySet<Transaction> _Transactions;
+		private int _ID_phone;
+		
+		private EntityRef<Phone> _Phone1;
+		
+		private EntityRef<Transaction> _Transaction1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnusernameChanging(string value);
-    partial void OnusernameChanged();
-    partial void OnpasswordChanging(string value);
-    partial void OnpasswordChanged();
+    partial void OnquantityChanging(int value);
+    partial void OnquantityChanged();
+    partial void OnID_transactionChanging(int value);
+    partial void OnID_transactionChanged();
+    partial void OnID_phoneChanging(int value);
+    partial void OnID_phoneChanged();
     #endregion
 		
-		public Account()
+		public Transaction_Detail()
 		{
-			this._Transactions = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions), new Action<Transaction>(this.detach_Transactions));
+			this._Phone1 = default(EntityRef<Phone>);
+			this._Transaction1 = default(EntityRef<Transaction>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string username
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quantity", DbType="Int NOT NULL")]
+		public int quantity
 		{
 			get
 			{
-				return this._username;
+				return this._quantity;
 			}
 			set
 			{
-				if ((this._username != value))
+				if ((this._quantity != value))
 				{
-					this.OnusernameChanging(value);
+					this.OnquantityChanging(value);
 					this.SendPropertyChanging();
-					this._username = value;
-					this.SendPropertyChanged("username");
-					this.OnusernameChanged();
+					this._quantity = value;
+					this.SendPropertyChanged("quantity");
+					this.OnquantityChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string password
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_transaction", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_transaction
 		{
 			get
 			{
-				return this._password;
+				return this._ID_transaction;
 			}
 			set
 			{
-				if ((this._password != value))
+				if ((this._ID_transaction != value))
 				{
-					this.OnpasswordChanging(value);
+					if (this._Transaction1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_transactionChanging(value);
 					this.SendPropertyChanging();
-					this._password = value;
-					this.SendPropertyChanged("password");
-					this.OnpasswordChanged();
+					this._ID_transaction = value;
+					this.SendPropertyChanged("ID_transaction");
+					this.OnID_transactionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Transaction", Storage="_Transactions", ThisKey="username", OtherKey="username")]
-		public EntitySet<Transaction> Transactions
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_phone", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_phone
 		{
 			get
 			{
-				return this._Transactions;
+				return this._ID_phone;
 			}
 			set
 			{
-				this._Transactions.Assign(value);
+				if ((this._ID_phone != value))
+				{
+					if (this._Phone1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_phoneChanging(value);
+					this.SendPropertyChanging();
+					this._ID_phone = value;
+					this.SendPropertyChanged("ID_phone");
+					this.OnID_phoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phone_Transaction_Detail1", Storage="_Phone1", ThisKey="ID_phone", OtherKey="ID_phone", IsForeignKey=true)]
+		public Phone Phone1
+		{
+			get
+			{
+				return this._Phone1.Entity;
+			}
+			set
+			{
+				Phone previousValue = this._Phone1.Entity;
+				if (((previousValue != value) 
+							|| (this._Phone1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Phone1.Entity = null;
+						previousValue.Transaction_Details1.Remove(this);
+					}
+					this._Phone1.Entity = value;
+					if ((value != null))
+					{
+						value.Transaction_Details1.Add(this);
+						this._ID_phone = value.ID_phone;
+					}
+					else
+					{
+						this._ID_phone = default(int);
+					}
+					this.SendPropertyChanged("Phone1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transaction_Transaction_Detail1", Storage="_Transaction1", ThisKey="ID_transaction", OtherKey="ID_transaction", IsForeignKey=true)]
+		public Transaction Transaction1
+		{
+			get
+			{
+				return this._Transaction1.Entity;
+			}
+			set
+			{
+				Transaction previousValue = this._Transaction1.Entity;
+				if (((previousValue != value) 
+							|| (this._Transaction1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Transaction1.Entity = null;
+						previousValue.Transaction_Details1.Remove(this);
+					}
+					this._Transaction1.Entity = value;
+					if ((value != null))
+					{
+						value.Transaction_Details1.Add(this);
+						this._ID_transaction = value.ID_transaction;
+					}
+					else
+					{
+						this._ID_transaction = default(int);
+					}
+					this.SendPropertyChanged("Transaction1");
+				}
 			}
 		}
 		
@@ -571,180 +937,6 @@ namespace PhoneManagerment_LINQtoSQL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Transactions(Transaction entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Transactions(Transaction entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customer")]
-	public partial class Customer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Customer_Name;
-		
-		private string _PhoneNumber;
-		
-		private string _Address;
-		
-		private int _ID_customer;
-		
-		private EntitySet<Transaction> _Transactions;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCustomer_NameChanging(string value);
-    partial void OnCustomer_NameChanged();
-    partial void OnPhoneNumberChanging(string value);
-    partial void OnPhoneNumberChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnID_customerChanging(int value);
-    partial void OnID_customerChanged();
-    #endregion
-		
-		public Customer()
-		{
-			this._Transactions = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions), new Action<Transaction>(this.detach_Transactions));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Customer_Name
-		{
-			get
-			{
-				return this._Customer_Name;
-			}
-			set
-			{
-				if ((this._Customer_Name != value))
-				{
-					this.OnCustomer_NameChanging(value);
-					this.SendPropertyChanging();
-					this._Customer_Name = value;
-					this.SendPropertyChanged("Customer_Name");
-					this.OnCustomer_NameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string PhoneNumber
-		{
-			get
-			{
-				return this._PhoneNumber;
-			}
-			set
-			{
-				if ((this._PhoneNumber != value))
-				{
-					this.OnPhoneNumberChanging(value);
-					this.SendPropertyChanging();
-					this._PhoneNumber = value;
-					this.SendPropertyChanged("PhoneNumber");
-					this.OnPhoneNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_customer", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID_customer
-		{
-			get
-			{
-				return this._ID_customer;
-			}
-			set
-			{
-				if ((this._ID_customer != value))
-				{
-					this.OnID_customerChanging(value);
-					this.SendPropertyChanging();
-					this._ID_customer = value;
-					this.SendPropertyChanged("ID_customer");
-					this.OnID_customerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Transaction", Storage="_Transactions", ThisKey="ID_customer", OtherKey="ID_customer")]
-		public EntitySet<Transaction> Transactions
-		{
-			get
-			{
-				return this._Transactions;
-			}
-			set
-			{
-				this._Transactions.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Transactions(Transaction entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = this;
-		}
-		
-		private void detach_Transactions(Transaction entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = null;
 		}
 	}
 	
@@ -764,11 +956,11 @@ namespace PhoneManagerment_LINQtoSQL
 		
 		private string _username;
 		
-		private EntitySet<Transaction_Detail> _Transaction_Details;
+		private EntitySet<Transaction_Detail> _Transaction_Details1;
 		
-		private EntityRef<Customer> _Customer;
+		private EntityRef<Customer> _Customer1;
 		
-		private EntityRef<Account> _Account;
+		private EntityRef<Account> _Account1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -788,9 +980,9 @@ namespace PhoneManagerment_LINQtoSQL
 		
 		public Transaction()
 		{
-			this._Transaction_Details = new EntitySet<Transaction_Detail>(new Action<Transaction_Detail>(this.attach_Transaction_Details), new Action<Transaction_Detail>(this.detach_Transaction_Details));
-			this._Customer = default(EntityRef<Customer>);
-			this._Account = default(EntityRef<Account>);
+			this._Transaction_Details1 = new EntitySet<Transaction_Detail>(new Action<Transaction_Detail>(this.attach_Transaction_Details1), new Action<Transaction_Detail>(this.detach_Transaction_Details1));
+			this._Customer1 = default(EntityRef<Customer>);
+			this._Account1 = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -865,7 +1057,7 @@ namespace PhoneManagerment_LINQtoSQL
 			{
 				if ((this._ID_customer != value))
 				{
-					if (this._Customer.HasLoadedOrAssignedValue)
+					if (this._Customer1.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -889,7 +1081,7 @@ namespace PhoneManagerment_LINQtoSQL
 			{
 				if ((this._username != value))
 				{
-					if (this._Account.HasLoadedOrAssignedValue)
+					if (this._Account1.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -902,83 +1094,83 @@ namespace PhoneManagerment_LINQtoSQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transaction_Transaction_Detail", Storage="_Transaction_Details", ThisKey="ID_transaction", OtherKey="ID_transaction")]
-		public EntitySet<Transaction_Detail> Transaction_Details
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transaction_Transaction_Detail1", Storage="_Transaction_Details1", ThisKey="ID_transaction", OtherKey="ID_transaction")]
+		public EntitySet<Transaction_Detail> Transaction_Details1
 		{
 			get
 			{
-				return this._Transaction_Details;
+				return this._Transaction_Details1;
 			}
 			set
 			{
-				this._Transaction_Details.Assign(value);
+				this._Transaction_Details1.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Transaction", Storage="_Customer", ThisKey="ID_customer", OtherKey="ID_customer", IsForeignKey=true)]
-		public Customer Customer
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Transaction1", Storage="_Customer1", ThisKey="ID_customer", OtherKey="ID_customer", IsForeignKey=true)]
+		public Customer Customer1
 		{
 			get
 			{
-				return this._Customer.Entity;
+				return this._Customer1.Entity;
 			}
 			set
 			{
-				Customer previousValue = this._Customer.Entity;
+				Customer previousValue = this._Customer1.Entity;
 				if (((previousValue != value) 
-							|| (this._Customer.HasLoadedOrAssignedValue == false)))
+							|| (this._Customer1.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Customer.Entity = null;
-						previousValue.Transactions.Remove(this);
+						this._Customer1.Entity = null;
+						previousValue.Transactions1.Remove(this);
 					}
-					this._Customer.Entity = value;
+					this._Customer1.Entity = value;
 					if ((value != null))
 					{
-						value.Transactions.Add(this);
+						value.Transactions1.Add(this);
 						this._ID_customer = value.ID_customer;
 					}
 					else
 					{
 						this._ID_customer = default(int);
 					}
-					this.SendPropertyChanged("Customer");
+					this.SendPropertyChanged("Customer1");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Transaction", Storage="_Account", ThisKey="username", OtherKey="username", IsForeignKey=true)]
-		public Account Account
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Transaction1", Storage="_Account1", ThisKey="username", OtherKey="username", IsForeignKey=true)]
+		public Account Account1
 		{
 			get
 			{
-				return this._Account.Entity;
+				return this._Account1.Entity;
 			}
 			set
 			{
-				Account previousValue = this._Account.Entity;
+				Account previousValue = this._Account1.Entity;
 				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
+							|| (this._Account1.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Account.Entity = null;
-						previousValue.Transactions.Remove(this);
+						this._Account1.Entity = null;
+						previousValue.Transactions1.Remove(this);
 					}
-					this._Account.Entity = value;
+					this._Account1.Entity = value;
 					if ((value != null))
 					{
-						value.Transactions.Add(this);
+						value.Transactions1.Add(this);
 						this._username = value.username;
 					}
 					else
 					{
 						this._username = default(string);
 					}
-					this.SendPropertyChanged("Account");
+					this.SendPropertyChanged("Account1");
 				}
 			}
 		}
@@ -1003,208 +1195,16 @@ namespace PhoneManagerment_LINQtoSQL
 			}
 		}
 		
-		private void attach_Transaction_Details(Transaction_Detail entity)
+		private void attach_Transaction_Details1(Transaction_Detail entity)
 		{
 			this.SendPropertyChanging();
-			entity.Transaction = this;
+			entity.Transaction1 = this;
 		}
 		
-		private void detach_Transaction_Details(Transaction_Detail entity)
+		private void detach_Transaction_Details1(Transaction_Detail entity)
 		{
 			this.SendPropertyChanging();
-			entity.Transaction = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Transaction_Details")]
-	public partial class Transaction_Detail : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _quantity;
-		
-		private int _ID_transaction;
-		
-		private int _ID_phone;
-		
-		private EntityRef<Phone> _Phone;
-		
-		private EntityRef<Transaction> _Transaction;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnquantityChanging(int value);
-    partial void OnquantityChanged();
-    partial void OnID_transactionChanging(int value);
-    partial void OnID_transactionChanged();
-    partial void OnID_phoneChanging(int value);
-    partial void OnID_phoneChanged();
-    #endregion
-		
-		public Transaction_Detail()
-		{
-			this._Phone = default(EntityRef<Phone>);
-			this._Transaction = default(EntityRef<Transaction>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quantity", DbType="Int NOT NULL")]
-		public int quantity
-		{
-			get
-			{
-				return this._quantity;
-			}
-			set
-			{
-				if ((this._quantity != value))
-				{
-					this.OnquantityChanging(value);
-					this.SendPropertyChanging();
-					this._quantity = value;
-					this.SendPropertyChanged("quantity");
-					this.OnquantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_transaction", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID_transaction
-		{
-			get
-			{
-				return this._ID_transaction;
-			}
-			set
-			{
-				if ((this._ID_transaction != value))
-				{
-					if (this._Transaction.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_transactionChanging(value);
-					this.SendPropertyChanging();
-					this._ID_transaction = value;
-					this.SendPropertyChanged("ID_transaction");
-					this.OnID_transactionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_phone", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID_phone
-		{
-			get
-			{
-				return this._ID_phone;
-			}
-			set
-			{
-				if ((this._ID_phone != value))
-				{
-					if (this._Phone.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_phoneChanging(value);
-					this.SendPropertyChanging();
-					this._ID_phone = value;
-					this.SendPropertyChanged("ID_phone");
-					this.OnID_phoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phone_Transaction_Detail", Storage="_Phone", ThisKey="ID_phone", OtherKey="ID_phone", IsForeignKey=true)]
-		public Phone Phone
-		{
-			get
-			{
-				return this._Phone.Entity;
-			}
-			set
-			{
-				Phone previousValue = this._Phone.Entity;
-				if (((previousValue != value) 
-							|| (this._Phone.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Phone.Entity = null;
-						previousValue.Transaction_Details.Remove(this);
-					}
-					this._Phone.Entity = value;
-					if ((value != null))
-					{
-						value.Transaction_Details.Add(this);
-						this._ID_phone = value.ID_phone;
-					}
-					else
-					{
-						this._ID_phone = default(int);
-					}
-					this.SendPropertyChanged("Phone");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Transaction_Transaction_Detail", Storage="_Transaction", ThisKey="ID_transaction", OtherKey="ID_transaction", IsForeignKey=true)]
-		public Transaction Transaction
-		{
-			get
-			{
-				return this._Transaction.Entity;
-			}
-			set
-			{
-				Transaction previousValue = this._Transaction.Entity;
-				if (((previousValue != value) 
-							|| (this._Transaction.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Transaction.Entity = null;
-						previousValue.Transaction_Details.Remove(this);
-					}
-					this._Transaction.Entity = value;
-					if ((value != null))
-					{
-						value.Transaction_Details.Add(this);
-						this._ID_transaction = value.ID_transaction;
-					}
-					else
-					{
-						this._ID_transaction = default(int);
-					}
-					this.SendPropertyChanged("Transaction");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
+			entity.Transaction1 = null;
 		}
 	}
 }

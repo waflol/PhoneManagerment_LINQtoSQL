@@ -16,13 +16,13 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
         public IQueryable getTransaction_details()
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
-            var Query = from cus in qlBH.Customers
-                        join trans in qlBH.Transactions on cus.ID_customer equals trans.ID_customer
+            var Query = from trans in qlBH.Transactions
+                        join cus in qlBH.Customers on trans.ID_customer equals cus.ID_customer
                         join trans_detail in qlBH.Transaction_Details on trans.ID_transaction equals trans_detail.ID_transaction
-                        join phone in qlBH.Phones on trans_detail.ID_phone equals phone.ID_phone into tt
-                        select cus;
-
-
+                        join phone in qlBH.Phones on trans_detail.ID_phone equals phone.ID_phone
+                        select new {cus.Customer_Name,cus.PhoneNumber,cus.Address,cus.ID_customer,phone.Model_Name,phone.Price,trans_detail.quantity,trans.Date, trans.username};
+           
+            
 
             return Query;
         }
