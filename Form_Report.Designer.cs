@@ -30,7 +30,7 @@ namespace PhoneManagerment_LINQtoSQL
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.TransactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PhoneDB = new PhoneManagerment_LINQtoSQL.PhoneDB();
             this.label1 = new System.Windows.Forms.Label();
@@ -81,9 +81,9 @@ namespace PhoneManagerment_LINQtoSQL
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "PhoneDB";
-            reportDataSource1.Value = this.TransactionsBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "PhoneDB";
+            reportDataSource2.Value = this.TransactionsBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PhoneManagerment_LINQtoSQL.Report_TongTienBanDt.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 82);
             this.reportViewer1.Name = "reportViewer1";
@@ -104,7 +104,9 @@ namespace PhoneManagerment_LINQtoSQL
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.Show_Button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_Report";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Report";
             this.Load += new System.EventHandler(this.Form_Report_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TransactionsBindingSource)).EndInit();

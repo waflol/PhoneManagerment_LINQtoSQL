@@ -63,6 +63,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Customer_Panel = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpk_BuyDate = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Phone_Number_Textbox = new System.Windows.Forms.TextBox();
             this.Address_Textbox = new System.Windows.Forms.TextBox();
             this.Name_Textbox = new System.Windows.Forms.TextBox();
@@ -75,13 +76,12 @@ namespace PhoneManagerment_LINQtoSQL
             this.Phone_Number_Label = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Export_Button = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Cart)).BeginInit();
             this.Phone_Info_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Quantity)).BeginInit();
             this.Customer_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -353,7 +353,7 @@ namespace PhoneManagerment_LINQtoSQL
             // 
             // Add_Phone_Button
             // 
-            this.Add_Phone_Button.Location = new System.Drawing.Point(273, 185);
+            this.Add_Phone_Button.Location = new System.Drawing.Point(288, 189);
             this.Add_Phone_Button.Name = "Add_Phone_Button";
             this.Add_Phone_Button.Size = new System.Drawing.Size(85, 25);
             this.Add_Phone_Button.TabIndex = 9;
@@ -367,7 +367,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Phone_Inf_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.Phone_Inf_Label.Location = new System.Drawing.Point(145, 7);
             this.Phone_Inf_Label.Name = "Phone_Inf_Label";
-            this.Phone_Inf_Label.Size = new System.Drawing.Size(134, 16);
+            this.Phone_Inf_Label.Size = new System.Drawing.Size(127, 16);
             this.Phone_Inf_Label.TabIndex = 8;
             this.Phone_Inf_Label.Text = "Phone Infomation";
             // 
@@ -444,6 +444,16 @@ namespace PhoneManagerment_LINQtoSQL
             this.dtpk_BuyDate.Size = new System.Drawing.Size(151, 20);
             this.dtpk_BuyDate.TabIndex = 12;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources.images;
+            this.pictureBox1.Location = new System.Drawing.Point(3, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // Phone_Number_Textbox
             // 
             this.Phone_Number_Textbox.BackColor = System.Drawing.SystemColors.Control;
@@ -502,7 +512,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Customer_Inf_Label.ForeColor = System.Drawing.Color.Blue;
             this.Customer_Inf_Label.Location = new System.Drawing.Point(105, 4);
             this.Customer_Inf_Label.Name = "Customer_Inf_Label";
-            this.Customer_Inf_Label.Size = new System.Drawing.Size(157, 16);
+            this.Customer_Inf_Label.Size = new System.Drawing.Size(148, 16);
             this.Customer_Inf_Label.TabIndex = 3;
             this.Customer_Inf_Label.Text = "Customer Infomation";
             // 
@@ -561,16 +571,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.Export_Button.UseVisualStyleBackColor = true;
             this.Export_Button.Click += new System.EventHandler(this.Export_Button_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources.images;
-            this.pictureBox1.Location = new System.Drawing.Point(3, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form_AddTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -586,7 +586,9 @@ namespace PhoneManagerment_LINQtoSQL
             this.Controls.Add(this.Phone_Info_Panel);
             this.Controls.Add(this.Customer_Panel);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_AddTransaction";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_AddTransaction";
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Cart)).EndInit();
             this.Phone_Info_Panel.ResumeLayout(false);
@@ -594,8 +596,8 @@ namespace PhoneManagerment_LINQtoSQL
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Quantity)).EndInit();
             this.Customer_Panel.ResumeLayout(false);
             this.Customer_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

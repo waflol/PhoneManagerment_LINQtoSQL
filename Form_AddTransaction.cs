@@ -84,7 +84,7 @@ namespace PhoneManagerment_LINQtoSQL {
         private void Reset_Button_Click(object sender, EventArgs e) {
             clearall_form();
         }
-    
+
         private void GridView_Cart_CellClick(object sender, DataGridViewCellEventArgs e) {
             try {
                 index_remove = GridView_Cart.CurrentCell.RowIndex;
@@ -111,11 +111,11 @@ namespace PhoneManagerment_LINQtoSQL {
         private void Export_Button_Click(object sender, EventArgs e) {
             customer.addCustomer(Name_Textbox.Text, Phone_Number_Textbox.Text, Address_Textbox.Text, customer.returnMaxID() + 1);
             transaction.addTransaction(transaction.returnMaxID() + 1, Total_cost, dtpk_BuyDate.Value.ToString(), customer.returnMaxID(), FormLogin.currentAccount);
-            
+           // MessageBox.Show((transaction.returnMaxID() + 1).ToString());
             ///int index_Row = 0;
             for (int i = 0; i < phoneID.Count; i++) {
                 transaction_Detail.addTransaction_details((GridView_Cart[2, i].Value.ToString()), transaction.returnMaxID().ToString(), phoneID[i]);
-                
+
             }
             clearall_form();
         }
@@ -138,8 +138,7 @@ namespace PhoneManagerment_LINQtoSQL {
         private void Phone_Search_Textbox_TextChanged(object sender, EventArgs e) {
             try {
                 dataGridView1.DataSource = Phone.search_ModelName(Phone_Search_Textbox.Text);
-                if (dataGridView1.Rows.Count>0 && Phone_Search_Textbox.Text!="" && dataGridView1.Rows[0].Cells[0].Value != null) 
-                {
+                if (dataGridView1.Rows.Count > 0 && Phone_Search_Textbox.Text != "" && dataGridView1.Rows[0].Cells[0].Value != null) {
                     Phone_Name_Textbox.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
                     txt_Ram.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
                     txt_istorage.Text = dataGridView1.Rows[0].Cells[8].Value.ToString();

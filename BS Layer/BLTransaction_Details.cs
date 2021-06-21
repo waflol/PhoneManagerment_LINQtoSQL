@@ -20,7 +20,7 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
                         join cus in qlBH.Customers on trans.ID_customer equals cus.ID_customer
                         join trans_detail in qlBH.Transaction_Details on trans.ID_transaction equals trans_detail.ID_transaction
                         join phone in qlBH.Phones on trans_detail.ID_phone equals phone.ID_phone
-                        select new {cus.Customer_Name,cus.PhoneNumber,cus.Address,cus.ID_customer,phone.Model_Name,phone.Price,trans_detail.quantity,trans.Date, trans.username};
+                        select new {cus.Customer_Name,cus.PhoneNumber,cus.Address,cus.ID_customer,phone.Model_Name,phone.Price,trans_detail.quantity,trans.Date, trans.username,trans.ID_transaction};
            
             
 
@@ -34,8 +34,6 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             trans_detail.ID_transaction = int.Parse(idtransaction);
             trans_detail.ID_phone = int.Parse(idphone);
             trans_detail.quantity = int.Parse(quantity);
-            qlBH.Transaction_Details.InsertOnSubmit(trans_detail);
-            qlBH.Transaction_Details.Context.SubmitChanges();
             try
             {
                 qlBH.Transaction_Details.InsertOnSubmit(trans_detail);

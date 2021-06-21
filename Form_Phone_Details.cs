@@ -17,6 +17,7 @@ namespace PhoneManagerment_LINQtoSQL
         bool Them;
         string err;
 
+        string x = " ";
         string Phone_Name;
         int index;
         public Form_Phone_Details()
@@ -55,12 +56,19 @@ namespace PhoneManagerment_LINQtoSQL
         private void GridView_PhoneRecord_CellClick(object sender, DataGridViewCellEventArgs e) {
             try {
                 index = GridView_PhoneRecord.CurrentCell.RowIndex;
-                if (GridView_PhoneRecord.Rows[index].Cells[0].Value != null) {
-                    Phone_Name = GridView_PhoneRecord.Rows[index].Cells[0].Value.ToString();
+                if (GridView_PhoneRecord.Rows[index].Cells[11].Value != null) {
+                    Phone_Name = GridView_PhoneRecord.Rows[index].Cells[11].Value.ToString();
+                    txt_PhoneID.Text = GridView_PhoneRecord.Rows[index].Cells[0].Value.ToString();
                 }
             } catch {
 
             }
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e) {
+           phones.deletePhones(ref x,Phone_Name);
+            LoadPhone();
+            txt_PhoneID.Text = "";
         }
     }
 }

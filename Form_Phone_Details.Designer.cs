@@ -76,11 +76,11 @@ namespace PhoneManagerment_LINQtoSQL
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(346, 86);
+            this.label2.Location = new System.Drawing.Point(300, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 24);
+            this.label2.Size = new System.Drawing.Size(138, 24);
             this.label2.TabIndex = 53;
-            this.label2.Text = "Phone Id";
+            this.label2.Text = "Phone Name ";
             // 
             // btn_Delete
             // 
@@ -93,6 +93,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.btn_Delete.TabIndex = 55;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Edit
             // 
@@ -167,7 +168,9 @@ namespace PhoneManagerment_LINQtoSQL
             this.Controls.Add(this.txt_PhoneID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Delete);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_Phone_Details";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Phone_Details";
             this.Load += new System.EventHandler(this.Form_Phone_Details_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridView_PhoneRecord)).EndInit();

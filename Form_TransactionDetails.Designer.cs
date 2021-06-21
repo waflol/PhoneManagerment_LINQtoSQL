@@ -91,9 +91,10 @@ namespace PhoneManagerment_LINQtoSQL
             this.GridView_Details_Trans.Location = new System.Drawing.Point(11, 142);
             this.GridView_Details_Trans.Margin = new System.Windows.Forms.Padding(2);
             this.GridView_Details_Trans.Name = "GridView_Details_Trans";
+            this.GridView_Details_Trans.RowHeadersVisible = false;
             this.GridView_Details_Trans.RowHeadersWidth = 51;
             this.GridView_Details_Trans.RowTemplate.Height = 24;
-            this.GridView_Details_Trans.Size = new System.Drawing.Size(790, 297);
+            this.GridView_Details_Trans.Size = new System.Drawing.Size(736, 297);
             this.GridView_Details_Trans.TabIndex = 7;
             this.GridView_Details_Trans.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_Details_Trans_CellClick);
             // 
@@ -110,7 +111,7 @@ namespace PhoneManagerment_LINQtoSQL
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources.coin;
-            this.pictureBox1.Location = new System.Drawing.Point(641, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(587, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(160, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -121,7 +122,7 @@ namespace PhoneManagerment_LINQtoSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 450);
+            this.ClientSize = new System.Drawing.Size(752, 450);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_remove);
@@ -129,7 +130,9 @@ namespace PhoneManagerment_LINQtoSQL
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GridView_Details_Trans);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_TransactionDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_TransactionDetails";
             this.Load += new System.EventHandler(this.Form_TransactionDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Details_Trans)).EndInit();

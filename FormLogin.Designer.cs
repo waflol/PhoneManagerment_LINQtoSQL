@@ -127,7 +127,9 @@ namespace PhoneManagerment_LINQtoSQL
             this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.lb_Password);
             this.Controls.Add(this.lb_Username);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Login";
             this.ResumeLayout(false);
             this.PerformLayout();

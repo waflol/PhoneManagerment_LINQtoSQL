@@ -116,7 +116,9 @@ namespace PhoneManagerment_LINQtoSQL
             this.ClientSize = new System.Drawing.Size(979, 514);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menu_Home);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.menu_Home.ResumeLayout(false);
