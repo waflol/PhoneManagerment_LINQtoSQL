@@ -104,6 +104,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Controls.Add(this.menu_Home);
             this.Name = "Home";
             this.Text = "Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.menu_Home.ResumeLayout(false);
             this.menu_Home.PerformLayout();
             this.ResumeLayout(false);

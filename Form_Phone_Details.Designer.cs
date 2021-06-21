@@ -64,6 +64,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.GridView_PhoneRecord.RowHeadersVisible = false;
             this.GridView_PhoneRecord.Size = new System.Drawing.Size(1007, 236);
             this.GridView_PhoneRecord.TabIndex = 56;
+            this.GridView_PhoneRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_PhoneRecord_CellClick);
             // 
             // bindingSource1
             // 
@@ -116,6 +117,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.btn_Edit.TabIndex = 58;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = false;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // label4
             // 
