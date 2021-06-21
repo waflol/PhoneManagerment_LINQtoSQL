@@ -30,30 +30,26 @@ namespace PhoneManagerment_LINQtoSQL
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.phoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GridView_PhoneRecord = new System.Windows.Forms.DataGridView();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.txt_PhoneID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.phoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_PhoneRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phonesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_PhoneRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // phoneBindingSource
-            // 
-            this.phoneBindingSource.DataMember = "Phone";
-            // 
-            // phonesBindingSource
-            // 
-            this.phonesBindingSource.DataMember = "Phones";
             // 
             // GridView_PhoneRecord
             // 
@@ -66,18 +62,10 @@ namespace PhoneManagerment_LINQtoSQL
             this.GridView_PhoneRecord.TabIndex = 56;
             this.GridView_PhoneRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_PhoneRecord_CellClick);
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "Phone";
-            // 
-            // bindingSource2
-            // 
-            this.bindingSource2.DataMember = "Phones";
-            // 
             // txt_PhoneID
             // 
             this.txt_PhoneID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PhoneID.Location = new System.Drawing.Point(494, 93);
+            this.txt_PhoneID.Location = new System.Drawing.Point(444, 85);
             this.txt_PhoneID.Name = "txt_PhoneID";
             this.txt_PhoneID.Size = new System.Drawing.Size(203, 26);
             this.txt_PhoneID.TabIndex = 54;
@@ -88,7 +76,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(396, 94);
+            this.label2.Location = new System.Drawing.Point(346, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
             this.label2.TabIndex = 53;
@@ -99,7 +87,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.btn_Delete.BackColor = System.Drawing.Color.Firebrick;
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Delete.Location = new System.Drawing.Point(481, 165);
+            this.btn_Delete.Location = new System.Drawing.Point(431, 157);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(78, 32);
             this.btn_Delete.TabIndex = 55;
@@ -111,7 +99,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.btn_Edit.BackColor = System.Drawing.Color.DarkGreen;
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Edit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Edit.Location = new System.Drawing.Point(591, 165);
+            this.btn_Edit.Location = new System.Drawing.Point(541, 157);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(78, 32);
             this.btn_Edit.TabIndex = 58;
@@ -124,17 +112,55 @@ namespace PhoneManagerment_LINQtoSQL
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(458, 42);
+            this.label4.Location = new System.Drawing.Point(408, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(224, 31);
             this.label4.TabIndex = 59;
             this.label4.Text = "Phone Available";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources.giphy;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(215, 177);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 61;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources.phone;
+            this.pictureBox1.Location = new System.Drawing.Point(706, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(295, 177);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 60;
+            this.pictureBox1.TabStop = false;
+            // 
+            // phoneBindingSource
+            // 
+            this.phoneBindingSource.DataMember = "Phone";
+            // 
+            // phonesBindingSource
+            // 
+            this.phonesBindingSource.DataMember = "Phones";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Phone";
+            // 
+            // bindingSource2
+            // 
+            this.bindingSource2.DataMember = "Phones";
             // 
             // Form_Phone_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 450);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.GridView_PhoneRecord);
@@ -144,9 +170,11 @@ namespace PhoneManagerment_LINQtoSQL
             this.Name = "Form_Phone_Details";
             this.Text = "Form_Phone_Details";
             this.Load += new System.EventHandler(this.Form_Phone_Details_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_PhoneRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phonesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridView_PhoneRecord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.ResumeLayout(false);
@@ -165,5 +193,7 @@ namespace PhoneManagerment_LINQtoSQL
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

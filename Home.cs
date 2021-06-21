@@ -51,5 +51,10 @@ namespace PhoneManagerment_LINQtoSQL
         private void Home_FormClosing(object sender, FormClosingEventArgs e) {
             Application.Exit();
         }
+
+        private void infomationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hùng Anh\nHữu Giàu\nThế Hiển\n","Producer",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
     }
 }
