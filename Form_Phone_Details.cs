@@ -44,5 +44,9 @@ namespace PhoneManagerment_LINQtoSQL
         {
             GridView_PhoneRecord.DataSource = phones.search_ModelName(txt_PhoneID.Text);
         }
+
+        private void btn_Edit_Click(object sender, EventArgs e) {
+
+        }
     }
 }

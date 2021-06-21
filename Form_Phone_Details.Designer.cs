@@ -116,6 +116,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.btn_Edit.TabIndex = 58;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = false;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // label4
             // 

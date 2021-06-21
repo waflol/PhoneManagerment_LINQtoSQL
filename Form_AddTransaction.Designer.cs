@@ -75,11 +75,13 @@ namespace PhoneManagerment_LINQtoSQL
             this.Name_Label = new System.Windows.Forms.Label();
             this.Address_Label = new System.Windows.Forms.Label();
             this.Phone_Number_Label = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Cart)).BeginInit();
             this.Phone_Info_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Quantity)).BeginInit();
             this.Customer_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -239,7 +241,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.Phone_Name_Textbox.Name = "Phone_Name_Textbox";
             this.Phone_Name_Textbox.Size = new System.Drawing.Size(150, 20);
             this.Phone_Name_Textbox.TabIndex = 14;
-            this.Phone_Name_Textbox.TextChanged += new System.EventHandler(this.Phone_Name_Textbox_TextChanged);
             // 
             // Phone_Search_Textbox
             // 
@@ -247,6 +248,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Phone_Search_Textbox.Name = "Phone_Search_Textbox";
             this.Phone_Search_Textbox.Size = new System.Drawing.Size(254, 20);
             this.Phone_Search_Textbox.TabIndex = 13;
+            this.Phone_Search_Textbox.TextChanged += new System.EventHandler(this.Phone_Search_Textbox_TextChanged);
             // 
             // txt_camera
             // 
@@ -378,7 +380,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Phone_Inf_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.Phone_Inf_Label.Location = new System.Drawing.Point(145, 7);
             this.Phone_Inf_Label.Name = "Phone_Inf_Label";
-            this.Phone_Inf_Label.Size = new System.Drawing.Size(134, 16);
+            this.Phone_Inf_Label.Size = new System.Drawing.Size(127, 16);
             this.Phone_Inf_Label.TabIndex = 8;
             this.Phone_Inf_Label.Text = "Phone Infomation";
             // 
@@ -522,7 +524,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Customer_Inf_Label.ForeColor = System.Drawing.Color.Blue;
             this.Customer_Inf_Label.Location = new System.Drawing.Point(105, 4);
             this.Customer_Inf_Label.Name = "Customer_Inf_Label";
-            this.Customer_Inf_Label.Size = new System.Drawing.Size(157, 16);
+            this.Customer_Inf_Label.Size = new System.Drawing.Size(148, 16);
             this.Customer_Inf_Label.TabIndex = 3;
             this.Customer_Inf_Label.Text = "Customer Infomation";
             // 
@@ -559,6 +561,14 @@ namespace PhoneManagerment_LINQtoSQL
             this.Phone_Number_Label.TabIndex = 2;
             this.Phone_Number_Label.Text = "Call :";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(82, 266);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 26;
+            // 
             // Form_AddTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,6 +583,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Controls.Add(this.GridView_Cart);
             this.Controls.Add(this.Phone_Info_Panel);
             this.Controls.Add(this.Customer_Panel);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "Form_AddTransaction";
             this.Text = "Form_AddTransaction";
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Cart)).EndInit();
@@ -582,6 +593,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Customer_Panel.ResumeLayout(false);
             this.Customer_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -595,7 +607,6 @@ namespace PhoneManagerment_LINQtoSQL
         private System.Windows.Forms.Button Export_Button;
         private System.Windows.Forms.TextBox Total_Cost_Textbox;
         private System.Windows.Forms.Label Total_Price_Label;
-        private System.Windows.Forms.DataGridView GridView_Cart;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone_Column;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price_Column;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity_Column;
@@ -635,5 +646,7 @@ namespace PhoneManagerment_LINQtoSQL
         private System.Windows.Forms.Label Name_Label;
         private System.Windows.Forms.Label Address_Label;
         private System.Windows.Forms.Label Phone_Number_Label;
+        private System.Windows.Forms.DataGridView GridView_Cart;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

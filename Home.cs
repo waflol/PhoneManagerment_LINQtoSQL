@@ -47,5 +47,9 @@ namespace PhoneManagerment_LINQtoSQL
             Form_Report report = new Form_Report();
             report.ShowDialog();
         }
+
+        private void Home_FormClosing(object sender, FormClosingEventArgs e) {
+            Application.Exit();
+        }
     }
 }
