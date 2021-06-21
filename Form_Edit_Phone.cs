@@ -15,7 +15,7 @@ namespace PhoneManagerment_LINQtoSQL
     {
         BLPhones Phone = new BLPhones();
         DataSet Phone_search_dataset = new DataSet();
-
+        int phone_id;
         public Form_Edit_Phone(string namephone)
         {
           //  Phone_search_dataset = Phone.search_ModelName(namephone);
@@ -31,6 +31,7 @@ namespace PhoneManagerment_LINQtoSQL
 
                 if (dataGridView1.Rows.Count > 0)
                 {
+                    phone_id = int.Parse(dataGridView1.Rows[0].Cells[11].Value.ToString());
                     cbb_Ram.Text = dataGridView1.Rows[0].Cells[1].Value.ToString(); 
                     cbb_InternalStorage.Text = dataGridView1.Rows[0].Cells[8].Value.ToString();
                     cbb_Display.Text = dataGridView1.Rows[0].Cells[3].Value.ToString();
@@ -52,7 +53,7 @@ namespace PhoneManagerment_LINQtoSQL
         string x = " ";
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            Phone.updatePhones(int.Parse(Phone_search_dataset.Tables[0].Rows[0][11].ToString()), txt_ModelName.Text, cbb_Ram.Text, cbb_FrontCamera.Text, cbb_SimType.Text, cbb_NetworkType.Text, txt_Price.Text, cbb_FingerprintSensor.Text, cbb_InternalStorage.Text, cbb_InternalStorage.Text, cbb_RearCamera.Text, cbb_Display.Text, ref x);
+            Phone.updatePhones(phone_id, txt_ModelName.Text, cbb_Ram.Text, cbb_FrontCamera.Text, cbb_SimType.Text, cbb_NetworkType.Text, txt_Price.Text, cbb_FingerprintSensor.Text, cbb_InternalStorage.Text, cbb_InternalStorage.Text, cbb_RearCamera.Text, cbb_Display.Text, ref x);
             this.Close();
         }
     }

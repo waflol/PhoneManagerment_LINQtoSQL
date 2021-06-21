@@ -229,6 +229,7 @@ namespace PhoneManagerment_LINQtoSQL
             // 
             // txt_ModelName
             // 
+            this.txt_ModelName.Enabled = false;
             this.txt_ModelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ModelName.Location = new System.Drawing.Point(194, 61);
             this.txt_ModelName.Name = "txt_ModelName";

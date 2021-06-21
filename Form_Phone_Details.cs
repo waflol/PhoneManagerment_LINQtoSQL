@@ -18,7 +18,8 @@ namespace PhoneManagerment_LINQtoSQL
         string err;
 
         string x = " ";
-        string Phone_Name;
+        string Phone_Id;
+        string Phone_name;
         int index;
         public Form_Phone_Details()
         {
@@ -49,15 +50,18 @@ namespace PhoneManagerment_LINQtoSQL
         }
 
         private void btn_Edit_Click(object sender, EventArgs e) {
-            Form_Edit_Phone form_Edit_Phone = new Form_Edit_Phone(Phone_Name);
+            Form_Edit_Phone form_Edit_Phone = new Form_Edit_Phone(Phone_name);
             form_Edit_Phone.ShowDialog();
+            LoadPhone();
+            txt_PhoneID.Text = "";
         }
 
         private void GridView_PhoneRecord_CellClick(object sender, DataGridViewCellEventArgs e) {
             try {
                 index = GridView_PhoneRecord.CurrentCell.RowIndex;
                 if (GridView_PhoneRecord.Rows[index].Cells[11].Value != null) {
-                    Phone_Name = GridView_PhoneRecord.Rows[index].Cells[11].Value.ToString();
+                    Phone_Id = GridView_PhoneRecord.Rows[index].Cells[11].Value.ToString();
+                    Phone_name= GridView_PhoneRecord.Rows[index].Cells[0].Value.ToString();
                     txt_PhoneID.Text = GridView_PhoneRecord.Rows[index].Cells[0].Value.ToString();
                 }
             } catch {
@@ -66,7 +70,7 @@ namespace PhoneManagerment_LINQtoSQL
         }
 
         private void btn_Delete_Click(object sender, EventArgs e) {
-           phones.deletePhones(ref x,Phone_Name);
+           phones.deletePhones(ref x,Phone_Id);
             LoadPhone();
             txt_PhoneID.Text = "";
         }
