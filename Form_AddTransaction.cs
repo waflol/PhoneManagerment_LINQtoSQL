@@ -137,7 +137,8 @@ namespace PhoneManagerment_LINQtoSQL {
         private void Phone_Search_Textbox_TextChanged(object sender, EventArgs e) {
             try {
                 dataGridView1.DataSource = Phone.search_ModelName(Phone_Search_Textbox.Text);
-                if (dataGridView1.Rows.Count>0 && Phone_Search_Textbox.Text!="") {
+                if (dataGridView1.Rows.Count>0 && Phone_Search_Textbox.Text!="" && dataGridView1.Rows[0].Cells[0].Value != null) 
+                {
                     Phone_Name_Textbox.Text = dataGridView1.Rows[0].Cells[0].Value.ToString();
                     txt_Ram.Text = dataGridView1.Rows[0].Cells[1].Value.ToString();
                     txt_istorage.Text = dataGridView1.Rows[0].Cells[8].Value.ToString();

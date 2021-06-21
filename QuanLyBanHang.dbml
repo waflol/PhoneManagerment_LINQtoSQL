@@ -1,29 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PhoneDB" Class="QuanLyBanHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=MSI;Initial Catalog=PhoneDB;Integrated Security=True" SettingsObjectName="PhoneManagerment_LINQtoSQL.Properties.Settings" SettingsPropertyName="PhoneDBConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Accounts" Member="Accounts">
-    <Type Name="Account">
-      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-<<<<<<< HEAD
-      <Association Name="Account_Transaction1" Member="Transactions1" ThisKey="username" OtherKey="username" Type="Transaction" />
-=======
-      <Association Name="Account_Transaction" Member="Transactions" ThisKey="username" OtherKey="username" Type="Transaction" />
->>>>>>> 8265b81e3eb880d91af6f22722a2eb26add706bc
-    </Type>
-  </Table>
-  <Table Name="dbo.Customer" Member="Customers">
-    <Type Name="Customer">
-      <Column Name="Customer_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ID_customer" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-<<<<<<< HEAD
-      <Association Name="Customer_Transaction1" Member="Transactions1" ThisKey="ID_customer" OtherKey="ID_customer" Type="Transaction" />
-=======
-      <Association Name="Customer_Transaction" Member="Transactions" ThisKey="ID_customer" OtherKey="ID_customer" Type="Transaction" />
->>>>>>> 8265b81e3eb880d91af6f22722a2eb26add706bc
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=Noice;Initial Catalog=PhoneDB;Integrated Security=True" SettingsObjectName="PhoneManagerment_LINQtoSQL.Properties.Settings" SettingsPropertyName="PhoneDBConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Phone" Member="Phones">
     <Type Name="Phone">
       <Column Name="Model_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -38,24 +14,23 @@
       <Column Name="estorage" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Rear_Camera" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ID_phone" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-<<<<<<< HEAD
-      <Association Name="Phone_Transaction_Detail1" Member="Transaction_Details1" ThisKey="ID_phone" OtherKey="ID_phone" Type="Transaction_Detail" />
-=======
       <Association Name="Phone_Transaction_Detail" Member="Transaction_Details" ThisKey="ID_phone" OtherKey="ID_phone" Type="Transaction_Detail" />
->>>>>>> 8265b81e3eb880d91af6f22722a2eb26add706bc
     </Type>
   </Table>
-  <Table Name="dbo.Transaction_Details" Member="Transaction_Details">
-    <Type Name="Transaction_Detail">
-      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_transaction" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_phone" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-<<<<<<< HEAD
-      <Association Name="Phone_Transaction_Detail1" Member="Phone1" ThisKey="ID_phone" OtherKey="ID_phone" Type="Phone" IsForeignKey="true" />
-      <Association Name="Transaction_Transaction_Detail1" Member="Transaction1" ThisKey="ID_transaction" OtherKey="ID_transaction" Type="Transaction" IsForeignKey="true" />
-=======
-      <Association Name="Phone_Transaction_Detail" Member="Phone" ThisKey="ID_phone" OtherKey="ID_phone" Type="Phone" IsForeignKey="true" />
-      <Association Name="Transaction_Transaction_Detail" Member="Transaction" ThisKey="ID_transaction" OtherKey="ID_transaction" Type="Transaction" IsForeignKey="true" />
+  <Table Name="dbo.Accounts" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Account_Transaction" Member="Transactions" ThisKey="username" OtherKey="username" Type="Transaction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="Customer_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_customer" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Customer_Transaction" Member="Transactions" ThisKey="ID_customer" OtherKey="ID_customer" Type="Transaction" />
     </Type>
   </Table>
   <Table Name="dbo.Transactions" Member="Transactions">
@@ -68,19 +43,15 @@
       <Association Name="Transaction_Transaction_Detail" Member="Transaction_Details" ThisKey="ID_transaction" OtherKey="ID_transaction" Type="Transaction_Detail" />
       <Association Name="Customer_Transaction" Member="Customer" ThisKey="ID_customer" OtherKey="ID_customer" Type="Customer" IsForeignKey="true" />
       <Association Name="Account_Transaction" Member="Account" ThisKey="username" OtherKey="username" Type="Account" IsForeignKey="true" />
->>>>>>> 8265b81e3eb880d91af6f22722a2eb26add706bc
     </Type>
   </Table>
-  <Table Name="dbo.Transactions" Member="Transactions">
-    <Type Name="Transaction">
+  <Table Name="dbo.Transaction_Details" Member="Transaction_Details">
+    <Type Name="Transaction_Detail">
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ID_transaction" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Total_price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="ID_customer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Transaction_Transaction_Detail1" Member="Transaction_Details1" ThisKey="ID_transaction" OtherKey="ID_transaction" Type="Transaction_Detail" />
-      <Association Name="Customer_Transaction1" Member="Customer1" ThisKey="ID_customer" OtherKey="ID_customer" Type="Customer" IsForeignKey="true" />
-      <Association Name="Account_Transaction1" Member="Account1" ThisKey="username" OtherKey="username" Type="Account" IsForeignKey="true" />
+      <Column Name="ID_phone" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Phone_Transaction_Detail" Member="Phone" ThisKey="ID_phone" OtherKey="ID_phone" Type="Phone" IsForeignKey="true" />
+      <Association Name="Transaction_Transaction_Detail" Member="Transaction" ThisKey="ID_transaction" OtherKey="ID_transaction" Type="Transaction" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
