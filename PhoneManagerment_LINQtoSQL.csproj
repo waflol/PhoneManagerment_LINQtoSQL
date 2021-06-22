@@ -72,6 +72,12 @@
     <Compile Include="BS Layer\BLPhones.cs" />
     <Compile Include="BS Layer\BLTransactions.cs" />
     <Compile Include="BS Layer\BLTransaction_Details.cs" />
+    <Compile Include="Change_Pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change_Pass.designer.cs">
+      <DependentUpon>Change_Pass.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,21 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mange_Acc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mange_Acc.designer.cs">
+      <DependentUpon>Mange_Acc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New_Acc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New_Acc.designer.cs">
+      <DependentUpon>New_Acc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneDB.cs">
+      <DependentUpon>PhoneDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PhoneDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -133,6 +154,9 @@
       <DependentUpon>QuanLyBanHang.dbml</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Change_Pass.resx">
+      <DependentUpon>Change_Pass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +181,12 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mange_Acc.resx">
+      <DependentUpon>Mange_Acc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New_Acc.resx">
+      <DependentUpon>New_Acc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -173,9 +203,9 @@
       <DependentUpon>PhoneDB.xsd</DependentUpon>
     </None>
     <None Include="PhoneDB.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>PhoneDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="PhoneDB.xss">
       <DependentUpon>PhoneDB.xsd</DependentUpon>

@@ -14,6 +14,7 @@ namespace PhoneManagerment_LINQtoSQL
     public partial class FormLogin : Form
     {
         public static string currentAccount = "";
+        public static string currentPass = "";
         public FormLogin()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace PhoneManagerment_LINQtoSQL
             {
 
                 currentAccount = user;
+                currentPass = pass;
                 this.Visible = false;
                 Home obj2 = new Home();
                 obj2.ShowDialog();
@@ -53,6 +55,7 @@ namespace PhoneManagerment_LINQtoSQL
                 {
 
                     currentAccount = user;
+                    currentPass = pass;
                     this.Visible = false;
                     Home obj2 = new Home();
                     obj2.ShowDialog();

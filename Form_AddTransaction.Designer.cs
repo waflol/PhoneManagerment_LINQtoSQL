@@ -142,7 +142,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Phone_Column,
             this.Price_Column,
             this.Quantity_Column});
-            this.GridView_Cart.Location = new System.Drawing.Point(13, 209);
+            this.GridView_Cart.Location = new System.Drawing.Point(12, 209);
             this.GridView_Cart.Name = "GridView_Cart";
             this.GridView_Cart.RowHeadersVisible = false;
             this.GridView_Cart.RowHeadersWidth = 51;
@@ -367,7 +367,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Phone_Inf_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.Phone_Inf_Label.Location = new System.Drawing.Point(145, 7);
             this.Phone_Inf_Label.Name = "Phone_Inf_Label";
-            this.Phone_Inf_Label.Size = new System.Drawing.Size(127, 16);
+            this.Phone_Inf_Label.Size = new System.Drawing.Size(134, 16);
             this.Phone_Inf_Label.TabIndex = 8;
             this.Phone_Inf_Label.Text = "Phone Infomation";
             // 
@@ -512,7 +512,7 @@ namespace PhoneManagerment_LINQtoSQL
             this.Customer_Inf_Label.ForeColor = System.Drawing.Color.Blue;
             this.Customer_Inf_Label.Location = new System.Drawing.Point(105, 4);
             this.Customer_Inf_Label.Name = "Customer_Inf_Label";
-            this.Customer_Inf_Label.Size = new System.Drawing.Size(148, 16);
+            this.Customer_Inf_Label.Size = new System.Drawing.Size(157, 16);
             this.Customer_Inf_Label.TabIndex = 3;
             this.Customer_Inf_Label.Text = "Customer Infomation";
             // 

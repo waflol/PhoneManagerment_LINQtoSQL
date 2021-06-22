@@ -18,6 +18,16 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
          
             return qlBH.Accounts;
         }
+        public IQueryable findAccount(string name)
+        {
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+
+            var Query = (from item in qlBH.Accounts
+                         where item.username.StartsWith(name)
+                         select item);
+
+            return Query;
+        }
 
         public bool checkAccount(string user, string pass)
         {

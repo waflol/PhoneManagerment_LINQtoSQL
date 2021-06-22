@@ -56,5 +56,47 @@ namespace PhoneManagerment_LINQtoSQL
         {
             MessageBox.Show("Hùng Anh\nHữu Giàu\nThế Hiển\n","Producer",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
+
+        private void menu_Home_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void changePassWordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Change_Pass change = new Change_Pass();
+            change.ShowDialog();
+        }
+
+        private void addNewAccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (FormLogin.currentAccount == "Admin")
+            {
+                New_Acc new_Acc = new New_Acc();
+                new_Acc.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You are not the Administrator");
+            }
+        }
+
+        private void manageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (FormLogin.currentAccount == "Admin")
+            {
+                Mange_Acc acc = new Mange_Acc();
+                acc.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You are not the Administrator");
+            }
+        }
     }
 }
