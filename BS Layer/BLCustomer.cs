@@ -84,11 +84,9 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
                 try
                 {
                     qlBH.SubmitChanges();
-                    MessageBox.Show("Success");
                 }
                 catch
                 {
-                    MessageBox.Show("UnSuccess");
                     return false;
                 }
                 

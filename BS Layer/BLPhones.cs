@@ -56,12 +56,10 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             {
                 qlBH.Phones.InsertOnSubmit(phone);
                 qlBH.Phones.Context.SubmitChanges();
-                MessageBox.Show("Success");
                 return true;
             }
             catch(Exception error)
             {
-                MessageBox.Show("UnSuccess");
                 return false;
             }
             
@@ -83,14 +81,12 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             {
                 qlBH.Phones.DeleteAllOnSubmit(Query);
                 qlBH.SubmitChanges();
-                MessageBox.Show("Success");
                 return true;
                 
                 
             }
             catch (Exception error)
             {
-                MessageBox.Show("UnSuccess");
                 return false;
             }
 
@@ -120,14 +116,12 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
                 try
                 {
                     qlBH.SubmitChanges();
-                    MessageBox.Show("Success");
                     
 
 
                 }
                 catch (Exception error)
                 {
-                    MessageBox.Show("UnSuccess");
                     return false;
                 }
 

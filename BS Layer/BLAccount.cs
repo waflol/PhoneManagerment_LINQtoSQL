@@ -49,17 +49,55 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
         // them phone
         public bool addAccount(string user, string pass)
         {
-            return false;
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext(); 
+            Account acc = new Account();
+            acc.username = user;
+            acc.password = pass;
+
+            qlBH.Accounts.InsertOnSubmit(acc);
+            qlBH.Accounts.Context.SubmitChanges();
+            return true;
+
+
         }
         //xoa phone
         public bool deleteAccount(ref string err, string user)
         {
-            return false;
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+
+            var Query = from item in qlBH.Accounts
+                        where item.username.Equals(user)
+                        select item;
+
+            qlBH.Accounts.DeleteAllOnSubmit(Query);
+            qlBH.SubmitChanges();
+            return true;
         }
         // cap nhat phone
         public bool updateAccount(string user, string pass, ref string err)
         {
-            return false;
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+            var Query = (from item in qlBH.Accounts
+                         where item.username.Equals(user)
+                         select item).SingleOrDefault();//Biến Query là biến tham chiếu lưu phone của 1 phone trong danh sách qlBH.Phones
+
+            if (Query != null)
+            {
+                Query.username = user;
+                Query.password = pass;
+
+                try
+                {
+                    qlBH.SubmitChanges();
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+
+            return true;
         }
     }
 }
