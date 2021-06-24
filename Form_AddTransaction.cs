@@ -121,6 +121,8 @@ namespace PhoneManagerment_LINQtoSQL {
                 transaction_Detail.addTransaction_details((GridView_Cart[2, i].Value.ToString()), transaction.returnMaxID().ToString(), phoneID[i]);
 
             }
+            Deal_Result deal_Result = new Deal_Result(transaction.returnMaxID());
+            deal_Result.ShowDialog();
             clearall_form();
         }
         void clearall_form() {

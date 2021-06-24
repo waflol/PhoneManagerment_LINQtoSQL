@@ -62,7 +62,7 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             cus.Customer_Name = cusname;
             cus.PhoneNumber = phonenumber;
             cus.Address = address;
-
+            cus.Loyal_customer = "No";
             qlBH.Customers.InsertOnSubmit(cus);
             qlBH.Customers.Context.SubmitChanges();
             return true;

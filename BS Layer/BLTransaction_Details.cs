@@ -115,5 +115,16 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             return Query;
         }
 
+        public IQueryable search_by_Trans_ID(int ID) {
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+            var Query = from trans in qlBH.Transactions
+                        join cus in qlBH.Customers on trans.ID_customer equals cus.ID_customer
+                        join trans_detail in qlBH.Transaction_Details on trans.ID_transaction equals trans_detail.ID_transaction
+                        join phone in qlBH.Phones on trans_detail.ID_phone equals phone.ID_phone
+                        where trans_detail.ID_transaction==ID
+                        select new { cus.Customer_Name, cus.Loyal_customer, phone.Model_Name, phone.Price, trans_detail.quantity,trans.Total_price, trans.Date, trans.username };
+            return Query;
+        }
+
     }
 }

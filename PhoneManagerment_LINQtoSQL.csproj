@@ -84,6 +84,12 @@
     <Compile Include="Customer_ID_Detail.designer.cs">
       <DependentUpon>Customer_ID_Detail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Deal_Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Deal_Result.designer.cs">
+      <DependentUpon>Deal_Result.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_ID_Detail.resx">
       <DependentUpon>Customer_ID_Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Deal_Result.resx">
+      <DependentUpon>Deal_Result.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
