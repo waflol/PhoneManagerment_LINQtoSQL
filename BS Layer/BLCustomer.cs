@@ -21,6 +21,22 @@ namespace PhoneManagerment_LINQtoSQL.BS_Layer
             return qlBH.Customers;
         }
 
+        public IQueryable FindCustomer(string name, string phone, string address) {
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+            var Query = (from item in qlBH.Customers
+                         where item.Customer_Name == name & item.PhoneNumber == phone & item.Address == address
+                         select item) ;
+            return Query;
+        }
+
+        public IQueryable FindCustomer_SDT(string phone) {
+            QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();
+            var Query = (from item in qlBH.Customers
+                         where item.PhoneNumber.StartsWith(phone)
+                         select item);
+            return Query;
+        }
+
         public int returnMaxID()
         {
             QuanLyBanHangDataContext qlBH = new QuanLyBanHangDataContext();

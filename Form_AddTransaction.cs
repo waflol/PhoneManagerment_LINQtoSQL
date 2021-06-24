@@ -109,10 +109,14 @@ namespace PhoneManagerment_LINQtoSQL {
         }
 
         private void Export_Button_Click(object sender, EventArgs e) {
-            customer.addCustomer(Name_Textbox.Text, Phone_Number_Textbox.Text, Address_Textbox.Text, customer.returnMaxID() + 1);
+            dataGridView2.DataSource = customer.FindCustomer(Name_Textbox.Text,Phone_Number_Textbox.Text,Address_Textbox.Text);
+            // kiem tra neu khach hang da ton tai
+            if (dataGridView2.Rows[0].Cells[3].Value != null) {
+                transaction.addTransaction(transaction.returnMaxID() + 1, Total_cost, dtpk_BuyDate.Value.ToString(), int.Parse(dataGridView2.Rows[0].Cells[3].Value.ToString()), FormLogin.currentAccount);
+            } else {
+                 customer.addCustomer(Name_Textbox.Text, Phone_Number_Textbox.Text, Address_Textbox.Text, customer.returnMaxID() + 1);
             transaction.addTransaction(transaction.returnMaxID() + 1, Total_cost, dtpk_BuyDate.Value.ToString(), customer.returnMaxID(), FormLogin.currentAccount);
-           // MessageBox.Show((transaction.returnMaxID() + 1).ToString());
-            ///int index_Row = 0;
+            }
             for (int i = 0; i < phoneID.Count; i++) {
                 transaction_Detail.addTransaction_details((GridView_Cart[2, i].Value.ToString()), transaction.returnMaxID().ToString(), phoneID[i]);
 

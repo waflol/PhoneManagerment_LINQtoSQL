@@ -98,5 +98,10 @@ namespace PhoneManagerment_LINQtoSQL
                 MessageBox.Show("You are not the Administrator");
             }
         }
+
+        private void customerDetailsToolStripMenuItem_Click(object sender, EventArgs e) {
+            Customer_ID_Detail customer_ID_Detail = new Customer_ID_Detail();
+            customer_ID_Detail.ShowDialog();
+        }
     }
 }

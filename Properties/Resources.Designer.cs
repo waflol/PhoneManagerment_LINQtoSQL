@@ -63,6 +63,16 @@ namespace PhoneManagerment_LINQtoSQL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _247WallSt_com_247WS_559997_old_phones {
+            get {
+                object obj = ResourceManager.GetObject("247WallSt.com-247WS-559997-old-phones", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _84f355b7203c4435a8bcdaad90553032 {
             get {
                 object obj = ResourceManager.GetObject("84f355b7203c4435a8bcdaad90553032", resourceCulture);

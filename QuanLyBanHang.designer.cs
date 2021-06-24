@@ -22,7 +22,7 @@ namespace PhoneManagerment_LINQtoSQL
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="PhoneDB")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="PHONEDBMS")]
 	public partial class QuanLyBanHangDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -48,7 +48,7 @@ namespace PhoneManagerment_LINQtoSQL
     #endregion
 		
 		public QuanLyBanHangDataContext() : 
-				base(global::PhoneManagerment_LINQtoSQL.Properties.Settings.Default.PhoneDBConnectionString1, mappingSource)
+				base(global::PhoneManagerment_LINQtoSQL.Properties.Settings.Default.PHONEDBMSConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -166,7 +166,7 @@ namespace PhoneManagerment_LINQtoSQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(50)")]
 		public string password
 		{
 			get
@@ -246,6 +246,8 @@ namespace PhoneManagerment_LINQtoSQL
 		
 		private int _ID_customer;
 		
+		private string _Loyal_customer;
+		
 		private EntitySet<Transaction> _Transactions;
 		
     #region Extensibility Method Definitions
@@ -260,6 +262,8 @@ namespace PhoneManagerment_LINQtoSQL
     partial void OnAddressChanged();
     partial void OnID_customerChanging(int value);
     partial void OnID_customerChanged();
+    partial void OnLoyal_customerChanging(string value);
+    partial void OnLoyal_customerChanged();
     #endregion
 		
 		public Customer()
@@ -344,6 +348,26 @@ namespace PhoneManagerment_LINQtoSQL
 					this._ID_customer = value;
 					this.SendPropertyChanged("ID_customer");
 					this.OnID_customerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Loyal_customer", DbType="VarChar(50)")]
+		public string Loyal_customer
+		{
+			get
+			{
+				return this._Loyal_customer;
+			}
+			set
+			{
+				if ((this._Loyal_customer != value))
+				{
+					this.OnLoyal_customerChanging(value);
+					this.SendPropertyChanging();
+					this._Loyal_customer = value;
+					this.SendPropertyChanged("Loyal_customer");
+					this.OnLoyal_customerChanged();
 				}
 			}
 		}
@@ -754,7 +778,7 @@ namespace PhoneManagerment_LINQtoSQL
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _quantity;
+		private System.Nullable<int> _quantity;
 		
 		private int _ID_transaction;
 		
@@ -768,7 +792,7 @@ namespace PhoneManagerment_LINQtoSQL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnquantityChanging(int value);
+    partial void OnquantityChanging(System.Nullable<int> value);
     partial void OnquantityChanged();
     partial void OnID_transactionChanging(int value);
     partial void OnID_transactionChanged();
@@ -783,8 +807,8 @@ namespace PhoneManagerment_LINQtoSQL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quantity", DbType="Int NOT NULL")]
-		public int quantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quantity", DbType="Int")]
+		public System.Nullable<int> quantity
 		{
 			get
 			{
@@ -950,7 +974,7 @@ namespace PhoneManagerment_LINQtoSQL
 		
 		private int _Total_price;
 		
-		private System.DateTime _Date;
+		private System.Nullable<System.DateTime> _Date;
 		
 		private int _ID_customer;
 		
@@ -970,7 +994,7 @@ namespace PhoneManagerment_LINQtoSQL
     partial void OnID_transactionChanged();
     partial void OnTotal_priceChanging(int value);
     partial void OnTotal_priceChanged();
-    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
     partial void OnDateChanged();
     partial void OnID_customerChanging(int value);
     partial void OnID_customerChanged();
@@ -1026,8 +1050,8 @@ namespace PhoneManagerment_LINQtoSQL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
-		public System.DateTime Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> Date
 		{
 			get
 			{

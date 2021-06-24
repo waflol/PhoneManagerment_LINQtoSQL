@@ -78,6 +78,12 @@
     <Compile Include="Change_Pass.designer.cs">
       <DependentUpon>Change_Pass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer_ID_Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_ID_Detail.designer.cs">
+      <DependentUpon>Customer_ID_Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,9 +144,6 @@
     <Compile Include="New_Acc.designer.cs">
       <DependentUpon>New_Acc.cs</DependentUpon>
     </Compile>
-    <Compile Include="PhoneDB.cs">
-      <DependentUpon>PhoneDB.xsd</DependentUpon>
-    </Compile>
     <Compile Include="PhoneDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -156,6 +159,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Change_Pass.resx">
       <DependentUpon>Change_Pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer_ID_Detail.resx">
+      <DependentUpon>Customer_ID_Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -203,9 +209,9 @@
       <DependentUpon>PhoneDB.xsd</DependentUpon>
     </None>
     <None Include="PhoneDB.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>PhoneDB.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="PhoneDB.xss">
       <DependentUpon>PhoneDB.xsd</DependentUpon>
@@ -245,6 +251,7 @@
     <None Include="Resources\images.jpg" />
     <None Include="Resources\iphone.gif" />
     <None Include="Resources\editphone.gif" />
+    <None Include="Resources\247WallSt.com-247WS-559997-old-phones.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

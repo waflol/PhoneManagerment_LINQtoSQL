@@ -37,10 +37,11 @@ namespace PhoneManagerment_LINQtoSQL
             this.infomationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.benefitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.changePassWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.customerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +73,8 @@ namespace PhoneManagerment_LINQtoSQL
             // 
             // transactionDetailToolStripMenuItem
             // 
+            this.transactionDetailToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customerDetailsToolStripMenuItem});
             this.transactionDetailToolStripMenuItem.Name = "transactionDetailToolStripMenuItem";
             this.transactionDetailToolStripMenuItem.Size = new System.Drawing.Size(165, 25);
             this.transactionDetailToolStripMenuItem.Text = "Transaction details";
@@ -115,16 +118,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.accountToolStripMenuItem.Size = new System.Drawing.Size(85, 25);
             this.accountToolStripMenuItem.Text = "Account";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources.city;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(992, 466);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // changePassWordToolStripMenuItem
             // 
             this.changePassWordToolStripMenuItem.Name = "changePassWordToolStripMenuItem";
@@ -145,6 +138,23 @@ namespace PhoneManagerment_LINQtoSQL
             this.manageToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.manageToolStripMenuItem.Text = "Manage";
             this.manageToolStripMenuItem.Click += new System.EventHandler(this.manageToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources.city;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(992, 466);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // customerDetailsToolStripMenuItem
+            // 
+            this.customerDetailsToolStripMenuItem.Name = "customerDetailsToolStripMenuItem";
+            this.customerDetailsToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
+            this.customerDetailsToolStripMenuItem.Text = "Customer_Details";
+            this.customerDetailsToolStripMenuItem.Click += new System.EventHandler(this.customerDetailsToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -180,5 +190,6 @@ namespace PhoneManagerment_LINQtoSQL
         private System.Windows.Forms.ToolStripMenuItem changePassWordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewAccountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customerDetailsToolStripMenuItem;
     }
 }

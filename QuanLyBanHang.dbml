@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PhoneDB" Class="QuanLyBanHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=MSI;Initial Catalog=PhoneDB;Integrated Security=True" SettingsObjectName="PhoneManagerment_LINQtoSQL.Properties.Settings" SettingsPropertyName="PhoneDBConnectionString1" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PHONEDBMS" Class="QuanLyBanHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=Noice;Initial Catalog=PHONEDBMS;Integrated Security=True" SettingsObjectName="PhoneManagerment_LINQtoSQL.Properties.Settings" SettingsPropertyName="PHONEDBMSConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Accounts" Member="Accounts">
     <Type Name="Account">
       <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Account_Transaction" Member="Transactions" ThisKey="username" OtherKey="username" Type="Transaction" />
     </Type>
   </Table>
@@ -13,6 +13,7 @@
       <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ID_customer" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Loyal_customer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Customer_Transaction" Member="Transactions" ThisKey="ID_customer" OtherKey="ID_customer" Type="Transaction" />
     </Type>
   </Table>
@@ -35,7 +36,7 @@
   </Table>
   <Table Name="dbo.Transaction_Details" Member="Transaction_Details">
     <Type Name="Transaction_Detail">
-      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ID_transaction" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ID_phone" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Phone_Transaction_Detail" Member="Phone" ThisKey="ID_phone" OtherKey="ID_phone" Type="Phone" IsForeignKey="true" />
@@ -46,7 +47,7 @@
     <Type Name="Transaction">
       <Column Name="ID_transaction" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Total_price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="ID_customer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Transaction_Transaction_Detail" Member="Transaction_Details" ThisKey="ID_transaction" OtherKey="ID_transaction" Type="Transaction_Detail" />

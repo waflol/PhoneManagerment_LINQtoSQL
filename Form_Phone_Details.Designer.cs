@@ -121,10 +121,10 @@ namespace PhoneManagerment_LINQtoSQL
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources.giphy;
+            this.pictureBox2.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources._247WallSt_com_247WS_559997_old_phones;
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(215, 177);
+            this.pictureBox2.Size = new System.Drawing.Size(282, 177);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 61;
             this.pictureBox2.TabStop = false;
