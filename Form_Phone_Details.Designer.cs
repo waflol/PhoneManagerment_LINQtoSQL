@@ -37,14 +37,12 @@ namespace PhoneManagerment_LINQtoSQL
             this.btn_Edit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.phoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.phonesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GridView_PhoneRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phonesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -55,7 +53,7 @@ namespace PhoneManagerment_LINQtoSQL
             // 
             this.GridView_PhoneRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_PhoneRecord.GridColor = System.Drawing.SystemColors.Control;
-            this.GridView_PhoneRecord.Location = new System.Drawing.Point(10, 203);
+            this.GridView_PhoneRecord.Location = new System.Drawing.Point(27, 195);
             this.GridView_PhoneRecord.Name = "GridView_PhoneRecord";
             this.GridView_PhoneRecord.RowHeadersVisible = false;
             this.GridView_PhoneRecord.Size = new System.Drawing.Size(1007, 236);
@@ -124,20 +122,10 @@ namespace PhoneManagerment_LINQtoSQL
             this.pictureBox2.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources._247WallSt_com_247WS_559997_old_phones;
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(282, 177);
+            this.pictureBox2.Size = new System.Drawing.Size(1037, 427);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 61;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PhoneManagerment_LINQtoSQL.Properties.Resources.phone;
-            this.pictureBox1.Location = new System.Drawing.Point(706, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(295, 177);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 60;
-            this.pictureBox1.TabStop = false;
             // 
             // phoneBindingSource
             // 
@@ -159,15 +147,14 @@ namespace PhoneManagerment_LINQtoSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 450);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1061, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.GridView_PhoneRecord);
             this.Controls.Add(this.txt_PhoneID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Delete);
+            this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_Phone_Details";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -175,7 +162,6 @@ namespace PhoneManagerment_LINQtoSQL
             this.Load += new System.EventHandler(this.Form_Phone_Details_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridView_PhoneRecord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phonesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -196,7 +182,6 @@ namespace PhoneManagerment_LINQtoSQL
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
